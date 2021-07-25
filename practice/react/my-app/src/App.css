@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+html {
+  margin-left: 3rem;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +39,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.nameEffect {
+  font-weight: 800;
+}
+
+.contentsEffect {
+  font-size: 2rem;
 }
