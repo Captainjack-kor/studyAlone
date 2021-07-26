@@ -1,11 +1,13 @@
+import React, { Component } from 'react';
 
-function Tweet(props) {
-  return (
-    <div>
-      <div>{props.name}</div>
-      <div>{props.contents}</div>
-    </div>
-  );
+class Tweet extends Component {
+  render() {
+    return (
+      <div>
+        <h1>export 성공적입니다 sir</h1>
+      </div>
+    );
+  }
 }
 
 export default Tweet;

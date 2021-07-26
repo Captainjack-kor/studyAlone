@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Tweet from '../src/components/Tweet';
 
 const user = {
   firstName: 'Happy',
@@ -59,20 +60,35 @@ function formatDate(date) {
 // }
 
 //문법사용해서 props 대신 {name, contents}도 가능
-function Tweet({name, contents}) {
-  return (
-    <div>
-      <div className="nameEffect">{name}</div>
-      <div className="contentsEffect">{contents}</div>
-    </div>
-  );
-}
+// function Tweet({name, contents}) {
+//   return (
+//     <div>
+//       <div className="nameEffect">{name}</div>
+//       <div className="contentsEffect">{contents}</div>
+//     </div>
+//   );
+// }
 
-function ChildrenValue({writer}) {
-  const nowLearning = true;
-  return (
-    <div>{ nowLearning ? (<div>배그는 늘 짜릿하네요</div>) : (<div>react는 늘 짜릿하네요</div>) }</div>
-  );
+class ChildrenValue extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {nowLearning: false}
+  }
+
+  textChanger() {
+    this.setState(prevState => ({
+      nowLearning: !prevState.nowLearning
+    }));
+  }
+
+  render (){
+    return (
+      <>
+        <div>{ this.state.nowLearning ? (<div>배그는 늘 짜릿하네요</div>) : (<div>react는 늘 짜릿하네요</div>) }</div>
+        <button onClick={this.textChanger.bind(this)}>PUSH</button>
+      </>
+    );
+  };
 }
 
 class CounterBox extends React.Component {
@@ -121,11 +137,12 @@ function App(props) {
     <div>
       <Welcome name="CaptainJack" />
       <Toggleswitch />
-      <Tweet name="mika" contents="hi Koreans!" />
-      <Tweet name="jenny" contents="bye Koreans~" />
+      <Tweet />
+      {/* <Tweet name="mika" contents="hi Koreans!" />
+      <Tweet name="jenny" contents="bye Koreans~" /> */}
       <br/>
       <ChildrenValue writer="김코딩">{props.children}</ChildrenValue>
-      <button>PUSH</button>
+      
       <br/>
       <br/>
       <CounterBox/>
