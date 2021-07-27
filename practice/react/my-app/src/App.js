@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Tweet from '../src/components/Tweet';
 
@@ -91,6 +91,78 @@ class ChildrenValue extends React.Component {
   };
 }
 
+
+const currentUser = "김코딩";
+
+class Twittler extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      tweets: [
+        {
+          uuid: 1,
+          writer: "김코딩",
+          date: "2020-10-10",
+          content: "안녕 리액트",
+        },
+        {
+          uuid: 2,
+          writer: "박해커",
+          date: "2020-10-12",
+          content: "좋아 코드스테이츠!",
+        }
+      ],
+      newTweetContent: "",
+    }
+    this.addNewTweet = this.addNewTweet.bind(this);
+    this.onChangeText = this.onChangeText.bind(this);
+  }
+
+  onChangeText(e){
+    console.log(e.target.value);
+    this.setState({ newTweetContent: e.target.value })
+  }
+
+  addNewTweet(e){
+    console.log("새글쓰기 클릭")
+    const newTweet = {
+      uuid: this.state.tweets.length + 1,
+      writer: currentUser,
+      date: new Date().toISOString().substring(0, 10),
+      content: this.state.newTweetContent,
+    };
+
+    this.setState(prev => {
+      return (
+        { tweets: [...prev.tweets, newTweet]}
+      );
+    })
+  }
+
+  
+
+  render(){
+    return (
+      <>
+        <div>작성자: {currentUser}</div>
+        <div id="writing-area">
+          <textarea id="new-tweet-content" onChange={this.onChangeText}></textarea>
+          <button id="submit-new-tweet" onClick={this.addNewTweet}>새 글 쓰기</button>
+        </div>
+        <ul id="tweets">
+          {this.state.tweets.map((t) => (
+            <SingleTweet key={t.uuid} writer={t.writer} date={t.date}>
+              {t.content}
+            </SingleTweet>
+          ))}
+        </ul>
+      </>
+    );
+  }
+}
+
+// Twittler.displayName = 'Twittler'
+
 class CounterBox extends React.Component {
   constructor(props){
     super(props);
@@ -125,27 +197,42 @@ class CounterBox extends React.Component {
   }
 }
 
+function SingleTweet({writer, date, children}) {
+  return(
+    <li className="tweetDefault">
+      <div>{writer}</div>
+      <div>{date}</div>
+      <div>{children}</div>
+    </li>
+  );
+}
+
+// SingleTweet.displayName = 'SingleTweet'
+
 function App(props) {
-  //const element = <Welcome name="Sara" />;
-  /*
-    React가 사용자 정의 컴포넌트로 작성한 엘리먼트를 발견하면 
-    JSX 어트리뷰트와 자식을 해당 컴포넌트에 단일 객체로 전달합니다. 
-    이 객체를 “props”라고 합니다.
-  */
-  // setInterval(App, 1000);
+  
+    //const element = <Welcome name="Sara" />;
+    /*
+      React가 사용자 정의 컴포넌트로 작성한 엘리먼트를 발견하면 
+      JSX 어트리뷰트와 자식을 해당 컴포넌트에 단일 객체로 전달합니다. 
+      이 객체를 “props”라고 합니다.
+    */
+    // setInterval(App, 1000)
+  
   return (
     <div>
       <Welcome name="CaptainJack" />
       <Toggleswitch />
-      <Tweet />
       {/* <Tweet name="mika" contents="hi Koreans!" />
       <Tweet name="jenny" contents="bye Koreans~" /> */}
       <br/>
       <ChildrenValue writer="김코딩">{props.children}</ChildrenValue>
-      
       <br/>
       <br/>
       <CounterBox/>
+      <br/><br/>
+      <Twittler/>
+      
     </div>
   );
 }
