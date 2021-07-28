@@ -133,10 +133,10 @@ class Twittler extends React.Component {
     };
 
     this.setState(prev => {
-      return (
-        { tweets: [...prev.tweets, newTweet]}
-      );
-    })
+        return (
+          { tweets: [...prev.tweets, newTweet] }
+        );
+     })
   }
 
   
