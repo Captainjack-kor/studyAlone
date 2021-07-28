@@ -121,7 +121,7 @@ class Twittler extends React.Component {
   onChangeText(e){
     console.log(e.target.value);
     this.setState({ newTweetContent: e.target.value })
-  }
+  }g
 
   addNewTweet(e){
     console.log("새글쓰기 클릭")
