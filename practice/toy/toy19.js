@@ -42,6 +42,13 @@
     return result[1].length;
   };
 
+  !!테스트 
+  * LPS 'aabcdaabc'을(를) 입력받은 경우, 4을(를) 리턴해야 합니다
+  * LPS 'abcab'을(를) 입력받은 경우, 2을(를) 리턴해야 합니다
+  * LPS 'abbbcc'을(를) 입력받은 경우, 0을(를) 리턴해야 합니다
+  * LPS 'abcdabbb'을(를) 입력받은 경우, 0을(를) 리턴해야 합니다
+  * LPS 'abcdefghijklm'을(를) 입력받은 경우, 0을(를) 리턴해야 합니다
+  * 
  */
 
   // naive solution
