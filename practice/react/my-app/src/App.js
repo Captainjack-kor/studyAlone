@@ -116,15 +116,16 @@ class Twittler extends React.Component {
     }
     this.addNewTweet = this.addNewTweet.bind(this);
     this.onChangeText = this.onChangeText.bind(this);
+    console.log("생성");
   }
 
   onChangeText(e){
-    console.log(e.target.value);
+    //console.log(e.target.value);
     this.setState({ newTweetContent: e.target.value })
   }g
 
   addNewTweet(e){
-    console.log("새글쓰기 클릭")
+    //console.log("새글쓰기 클릭")
     const newTweet = {
       uuid: this.state.tweets.length + 1,
       writer: currentUser,
@@ -139,9 +140,20 @@ class Twittler extends React.Component {
      })
   }
 
-  
+  componentDidMount() {
+    console.log("생성 후");
+  }
+
+  componentDidUpdate() {
+    console.log("업데이트");
+  }
+
+  componentWillUnmount() {
+    console.log("삭제");
+  }
 
   render(){
+    console.log("렌더");
     return (
       <>
         <div>작성자: {currentUser}</div>
