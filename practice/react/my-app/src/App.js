@@ -184,14 +184,12 @@ class CounterBox extends React.Component {
   }
 
   plusButton() {
-    console.log("더하기");
     this.setState(prevState => ({
       isValue: prevState.isValue + 1
     }));
   }
 
   minusButton() {
-    console.log("빼기");
     console.log(this.state.isValue);
     if(this.state.isValue > 0 ) {
       this.setState(prevState => ({
