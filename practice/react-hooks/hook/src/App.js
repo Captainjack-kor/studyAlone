@@ -21,8 +21,28 @@ function App() {
   const [decrease, setDecrease] = useState(0);
   const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
   const [check, setCheck] = useState(false);
+  const [tweet, setTweet] = useState({ tweets: [], newTweetContent: ""});
   const toggleTest = () => {
     setCheck(check => !check);
+  }
+  console.log(tweet);
+  const addTweet = () => {
+    const newTweet = {
+      date: new Date().toISOString().substring(0, 10),
+      content: tweet.newTweetContent
+    }
+
+    // setTweet(prev => {
+    //   tweets: [...prev.tweets, newTweet]
+    // })
+    // setTweet(prev => {
+    //     tweets: [...prev.tweets, newTweet]
+    // }
+  }
+
+  const onChangeText = (e) => {
+    //console.log(e.target.value);
+    setTweet({ newTweetContent: e.target.value })
   }
 
   useEffect(() => {
@@ -57,7 +77,14 @@ function App() {
         { check ? <p> 나는 true 입니다. </p> : <p> 나는 false 입니다. </p> }
         <button onClick={toggleTest}>boolean value checking!</button>
         {/* {console.log(check)} */}
+
       </div>
+
+      <input type="text" className="tweet" onChange={onChangeText}>
+      </input>
+      <button className="addTweet" onClick={addTweet}>Enter!</button>
+
+      {}
     </>
   );
 }
