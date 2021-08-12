@@ -21,17 +21,32 @@ function App() {
   const [decrease, setDecrease] = useState(0);
   const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
   const [check, setCheck] = useState(false);
-  const [tweet, setTweet] = useState({ tweets: [], newTweetContent: ""});
+  const [tweet, setTweet] = useState({ tweets: [
+    {
+      uuid: 1,
+      writer: "김코딩",
+      date: "2020-10-10",
+      content: "안녕 리액트",
+    },
+    {
+      uuid: 2,
+      writer: "박해커",
+      date: "2020-10-12",
+      content: "좋아 코드스테이츠!",
+    }
+  ], newTweetContent: ""});
   const toggleTest = () => {
     setCheck(check => !check);
   }
-  console.log(tweet);
+  
   const addTweet = () => {
     const newTweet = {
       date: new Date().toISOString().substring(0, 10),
       content: tweet.newTweetContent
     }
 
+    console.log(tweet.newTweetContent);
+  
     // setTweet(prev => {
     //   tweets: [...prev.tweets, newTweet]
     // })
@@ -41,7 +56,6 @@ function App() {
   }
 
   const onChangeText = (e) => {
-    //console.log(e.target.value);
     setTweet({ newTweetContent: e.target.value })
   }
 
@@ -80,11 +94,19 @@ function App() {
 
       </div>
 
-      <input type="text" className="tweet" onChange={onChangeText}>
+      <input type="text" className="tweet" onChange={onChangeText}> 
       </input>
       <button className="addTweet" onClick={addTweet}>Enter!</button>
-
-      {}
+      
+      <ul id="tweetsAll">
+        {tweet.tweets.map((t) => (
+          <li className="liTest">
+            <div>
+              {t.content}
+            </div>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }

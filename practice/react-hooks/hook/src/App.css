@@ -14,3 +14,17 @@
   width: 5rem;
   height: 52px;
 }
+
+
+#tweetsAll {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.liTest {
+  margin-bottom: 2rem;
+  border: 1px solid black;
+  width: 50rem;
+  height: 5rem;
+  margin: 1rem;
+}
