@@ -1,20 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 
-
-// function useToggle(initialValue = false) {
-//   const [value, setValue] = useState(initialValue);
-
-//   const toggle = useCallback(
-//     () => {
-//       setValue(v => !v);
-//     },
-//     [],
-//   )
-
-//   return [value, toggle];
-// }
-
 function App() {
 
   const [count, setCount] = useState(0);
@@ -34,7 +20,8 @@ function App() {
       date: "2020-10-12",
       content: "좋아 코드스테이츠!",
     }
-  ], newTweetContent: ""});
+  ], newTweetContent: "" });
+
   const toggleTest = () => {
     setCheck(check => !check);
   }
@@ -45,8 +32,11 @@ function App() {
       content: tweet.newTweetContent
     }
 
-    console.log(tweet.newTweetContent);
-  
+
+    console.log(newTweet);
+
+    console.log(tweet.tweets);
+    
     // setTweet(prev => {
     //   tweets: [...prev.tweets, newTweet]
     // })
@@ -94,18 +84,17 @@ function App() {
 
       </div>
 
-      <input type="text" className="tweet" onChange={onChangeText}> 
-      </input>
+      <input type="text" className="tweet" onChange={onChangeText} />
       <button className="addTweet" onClick={addTweet}>Enter!</button>
       
       <ul id="tweetsAll">
-        {tweet.tweets.map((t) => (
+        {/* {tweet.tweets.map((t) => (
           <li className="liTest">
             <div>
               {t.content}
             </div>
           </li>
-        ))}
+        ))} */}
       </ul>
     </>
   );
