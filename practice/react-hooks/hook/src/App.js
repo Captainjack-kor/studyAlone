@@ -54,6 +54,14 @@ function App() {
     document.title = `You clicked ${count} times`;
   }, [count]);
 
+  // const singleTweet = ({writer, date, children}) => {
+  //   return (
+  //     <li className="liTest" key={t.uuid}>
+  //         {t.content}
+  //     </li>     
+  //   );
+  // }
+
   return (
     <>
       <div className="test">
@@ -88,13 +96,11 @@ function App() {
       <button className="addTweet" onClick={addTweet}>Enter!</button>
       
       <ul id="tweetsAll">
-        {/* {tweet.tweets.map((t) => (
-          <li className="liTest">
-            <div>
-              {t.content}
-            </div>
+        {tweet.tweets.map((t) => (
+          <li className="liTest" key={t.uuid}>
+            {t.content}
           </li>
-        ))} */}
+        ))}
       </ul>
     </>
   );
