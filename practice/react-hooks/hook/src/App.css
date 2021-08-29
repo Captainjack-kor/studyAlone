@@ -28,3 +28,29 @@
   height: 5rem;
   margin: 1rem;
 }
+
+.textAreaDefault {
+  margin-left: 3rem;
+  width: 30rem;;
+  height: 5rem;
+}
+
+.textAreaBtn {
+  width: 5rem;
+  height: 5rem;
+}
+
+.whyCantmove {
+  display: flex;
+  flex-direction: row;
+}
+
+.resultPart {
+  margin-left: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  width: 500px;
+  height: 100px;
+  color: white;
+  background-color: black;
+}

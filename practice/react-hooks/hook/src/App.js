@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
+import axios from "axios";
 
 function App() {
 
@@ -83,6 +84,53 @@ function App() {
   //   );
   // }
 
+  const [char, setChar] = useState("");
+  const [changeChar, setChangeChar] =useState("");
+
+  axios.get("http://localhost:8080")
+  .then((response) => {
+    console.log(response.data);
+  })
+
+  axios({
+    method: 'post',
+    url: 'http://localhost:8080/lower',
+    data: {
+      firstName: 'FRIDAY',
+    }
+  });
+
+  const toChangeUpperChar = () => {
+    //const upper = document.get
+    
+    axios.post("http://localhost:8080/lower", {
+      data: "DJDJDJ",
+      withCredentials: true,
+      headers: {
+          "Content-Type": "application/json"
+      },
+    })
+    .then(res => {
+      console.log(res);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+
+    console.log(char);
+  }
+
+  
+  const onChangetoChar = (e) => {
+    setChar(e.target.value);
+  }
+
+
+  const toChangeLowerChar = () => {
+    
+  }
+
+
   return (
     <>
       <div className="test">
@@ -124,6 +172,14 @@ function App() {
           </li>
         ))}
       </ul>
+      
+      <div className="whyCantmove">
+        <textarea className="textAreaDefault" onChange={onChangetoChar}></textarea>
+        &nbsp;
+        <input type="button" className="textAreaBtn" value="button" onClick={toChangeUpperChar}/>
+      </div>
+
+      <div className="resultPart">{changeChar}</div>
     </>
   );
 }
