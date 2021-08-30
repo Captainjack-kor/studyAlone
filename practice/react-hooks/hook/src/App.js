@@ -87,31 +87,27 @@ function App() {
   const [char, setChar] = useState("");
   const [changeChar, setChangeChar] =useState("");
 
-  axios.get("http://localhost:8080")
-  .then((response) => {
-    console.log(response.data);
-  })
+  // axios.get("http://localhost:8080")
+  // .then((response) => {
+  //   console.log(response.data);
+  // })
 
-  axios({
-    method: 'post',
-    url: 'http://localhost:8080/lower',
-    data: {
-      firstName: 'FRIDAY',
-    }
-  });
+  // axios({
+  //   method: 'POST',
+  //   url: 'http://localhost:8080/lower',
+  //   data: {
+  //     firstName: 'FRIDAY',
+  //   }
+  // }).then(res => {console.log(res)})
 
-  const toChangeUpperChar = () => {
+  const toChangeLowerChar = () => {
     //const upper = document.get
-    
     axios.post("http://localhost:8080/lower", {
-      data: "DJDJDJ",
-      withCredentials: true,
-      headers: {
-          "Content-Type": "application/json"
-      },
+      data: char,
     })
     .then(res => {
-      console.log(res);
+      console.log(res.data);
+      setChangeChar(res.data);
     })
     .catch(err => {
       console.log(err);
@@ -126,8 +122,19 @@ function App() {
   }
 
 
-  const toChangeLowerChar = () => {
-    
+  const toChangeUpperChar = () => {
+    axios.post("http://localhost:8080/upper", {
+      data: char,
+    })
+    .then(res => {
+      console.log(res.data);
+      setChangeChar(res.data);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+
+    console.log(char);
   }
 
 
@@ -176,7 +183,9 @@ function App() {
       <div className="whyCantmove">
         <textarea className="textAreaDefault" onChange={onChangetoChar}></textarea>
         &nbsp;
-        <input type="button" className="textAreaBtn" value="button" onClick={toChangeUpperChar}/>
+        <input type="button" className="textAreaBtn" value="Lower" onClick={toChangeLowerChar}/>
+        <input type="button" className="textAreaBtn" value="Upper" onClick={toChangeUpperChar}/>
+
       </div>
 
       <div className="resultPart">{changeChar}</div>
