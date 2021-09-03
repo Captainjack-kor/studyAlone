@@ -39,3 +39,5 @@ function sumTo(num) {
 
   return num + sumTo(num - 1);
 }
+
+console.log(sumTo(5)); // 1+2+3+4+5 =15
