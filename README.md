@@ -16,3 +16,4 @@ etc.
 Vue.js = 
 1. npm install -g @vue/cli
 2. vue create (dir)
+3. npm install vue-router --save
