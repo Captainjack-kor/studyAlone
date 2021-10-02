@@ -8,6 +8,7 @@
 </template>
 
 <script>
+//코드옮기기
 import Header from './components/layout/Header.vue';
 
 export default {
