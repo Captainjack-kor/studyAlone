@@ -1,5 +1,4 @@
 <head>
-
   <body>
     <title>named View Test</title>
   </body>
@@ -13,22 +12,38 @@
     <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
     
     <script>
-      let Body2 = { template: '<div> This is Body </div>' };
+      let Body = { template: '<div> This is Body </div>' };
       let Header = { template: '<div> This is Header </div>' };
       let Footer = { template: '<div> This is Footer </div>' };
+
+      let LoginHeader = { template: '<div> This is LoginHeader </div>' };
+      let LoginBody = { template: '<div> This is LoginBody </div>' };
+      let LoginFooter = { template: '<div> This is LoginFooter </div>' };
+
 
       let router = new VueRouter({
         routes: [
           {
             path: '/',
             components: {
-              default: Body2,
+              default: Body, 
+              //name 지정하지 않으면 default 값으로 찾음
               header: Header,
               footer: Footer,
+            }
+          },
+
+          {
+            path: '/login',
+            components: {
+              default: LoginBody,
+              header: LoginHeader,
+              footer: LoginFooter,
             }
           }
         ]
       })
+
 
       let app = new Vue({
         router
