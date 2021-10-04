@@ -12,27 +12,33 @@
           <router-link to="/main">Main 컴포넌트로 이동</router-link>
           <router-link to="/login">Login 컴포넌트로 이동</router-link>
         </p>
-        <router-view></router-view>
+        <router-view> 여기는 무엇일까요</router-view>
       </div>
       <script src="http://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
       <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
       <script>
-        let Main = { template: '<div>main</div>'};
-        let Login = { template: '<div>login</div>'};
-      
+        let Main = { 
+          template: '<div>main 페이지 입니다 !!!</div>'
+        };
+
+        let Login = { 
+          template: '<div>login 페이지 입니다 !!!</div>'
+        };
+        
         let routes = [
           { path: '/main', component: Main },
           { path: '/login', component: Login},
         ];
 
         let router = new VueRouter({
+          mode: 'history',
           routes
         });
 
         let app = new Vue({
           router
         }).$mount('#app');
-        
+
       </script>
     </body>
   </html>
