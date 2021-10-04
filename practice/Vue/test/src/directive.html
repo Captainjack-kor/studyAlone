@@ -8,6 +8,7 @@
       <a v-if="flag"> 두잇 Vue.js </a>
       <ul>
         <li v-for="system in systems">{{ system }}</li>
+        <li v-for="system in checkArr">{{ system }}</li>
       </ul>
       
       <p v-show="flag"> 두잇 vue2.js</p>
@@ -23,6 +24,8 @@
         data: {
           flag: true,
           systems: ['android', 'ios', 'window'],
+          checkArr: ['shorts', 'reels', 'Drill'],
+
           uid: 10
         },
         methods: {
