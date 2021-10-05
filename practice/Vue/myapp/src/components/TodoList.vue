@@ -1,7 +1,7 @@
 <template>
   <section>
-    <ul>
-      <li v-for="(todoItem, index) in todoItems" v-bind:key="todoItem" class="shadow"> 
+    <transition-group name="list" tag="ul">
+      <li v-for="(todoItem, index) in propsdata" v-bind:key="todoItem" class="shadow"> 
         <i class="checkBtn fas fa-check" aria-hidden="true">v</i>
         {{ todoItem }}
         <span class="removeBtn" type="button" @click="removeTodo(todoItem, index)">
@@ -12,38 +12,42 @@
       <!-- <li>할일 1</li>
       <li>할일 2</li>
       <li>할일 3</li> -->
-    </ul>
+    </transition-group>
   </section>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      todoItems: []
-    }
-  },
-  created() {
-    console.log(localStorage.length);
-    //라이프 사이클 = 인스턴스 생성 즉시 뷰 데이터 접근
-    if(localStorage.length > 0) {
-      for(let i = 0; i < localStorage.length; i++) {
-        this.todoItems.push(localStorage.key(i));
-      }
-    } 
-  },
+  props: ['propsdata'],
+  // data() {
+  //   return {
+  //     todoItems: []
+  //   }
+  // },
+  
   methods: {
     removeTodo(todoItem, index) {
       // console.log("clicked");
-      localStorage.removeItem(todoItem);
-      this.todoItems.splice(index, 1);
-      console.log(todoItem, index);
-    }
+      this.$emit('removeTodo', todoItem, index);
+
+      // localStorage.removeItem(todoItem);
+      // this.todoItems.splice(index, 1);
+      // console.log(todoItem, index);
+    },
   }
 }
 </script>
 
 <style scoped>
+  .list-enter-active, .list-leave-active {
+    transition: all 1s;
+  }
+
+  .list-enter, .list-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
   ul {
     list-style-type: none;
     padding-left: 0px;
