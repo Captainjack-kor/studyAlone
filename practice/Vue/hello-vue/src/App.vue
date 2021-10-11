@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <Childcomponent v-bind:propsdata="message"> </Childcomponent>
+    <Eventcomponent v-on:show-log="printText"> </Eventcomponent>
   </div>
 </template>
 
 <script>
 import Childcomponent from './components/Childcomponent.vue';
-//import HelloWorld from './components/HelloWorld.vue'
-// import Child-component from '@/components/Child-component.vue';
+import Eventcomponent from "@/components/Eventcomponent.vue";
 
 export default {
   name: 'App',
@@ -20,11 +20,15 @@ export default {
     console.log("hi");
   }, 
   components: {
-    Childcomponent
+    Childcomponent,
+    Eventcomponent,
 
   },
-  methods: {
-    
+  methods: { 
+    printText() {
+      // console.log("received an event !")
+      alert("mini test");
+    },
   }
 }
 </script>
