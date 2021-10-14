@@ -1,0 +1,185 @@
+/*
+    * 공통 css 변수
+        - 여기 값만 바꾸면 해당 style이 바뀐다
+        - 기본 칼라
+        - 배경 칼라
+        - 폰트 칼라
+
+    * scss 적용
+*/
+/* color */
+$color-white: #FFFFFF;
+$color-green: #75B243;
+$color-lightblue: #008FAD;
+$color-red: #FF0000;
+$color-black: #000000;
+
+
+/* background-color */
+$bg-color-side-menu: rgba(1, 8, 47, 0.9) !important;
+$bg-color-footer: #efefef;
+// $bg-color-footer: #FFFFFF;
+$bg-color-result-bg-white : #FFFFFF;
+$bg-color-main-gradient-end : #3A94C6;
+$bg-color-main-gradient-mid : #61AB9B;
+$bg-color-main-gradient-start : #FFE700;
+$bg-color-d_start-gradient-start : #FFF500;
+$bg-color-d_start-gradient-end : #FFBE00;
+$bg-color-d_start-gradient-2-start : #20D6BE;
+$bg-color-d_start-gradient-2-end : #62E2D1;
+$bg-color-d_start-meun-border : #BABABA;
+$bg-color-d_mind_image-btn-border : #E6E5CF;
+$bg-color-d_mind_image-btn-1 : #FC9B84;
+$bg-color-d_mind_image-btn-2 : #FFC400;
+$bg-color-d_mind_text-question: #222222;
+$bg-color-d_mind_text-btn-border : #E6E5CF;
+$bg-color-d_mind_text-btn-1 : #FFEBAF;
+$bg-color-d_mind_text-btn-2 : #FDD96D;
+$bg-color-d_mind_text-btn-3 : #FBC116;
+$bg-color-d_mind_text-btn-4 : #E5AB00;
+$bg-color-d_mind_text-btn-hover : #B58700;
+$bg-color-d_body_text-btn-border : #C3E941;
+$bg-color-d_body_text-btn : #FFFDD6;
+$bg-color-d_body_text-btn-hover : #7C833F;
+$bg-color-login-background: #F2F2F2;
+$bg-color-info-btn: #FFB400;
+$bg-color-counsel-gradient-start : #FFE7D0;
+$bg-color-counsel-selected : #ff9800;
+$bg-color-counsel-gradient-end : #FFBE7E;
+$bg-color-counsel-top-line : #FBC187;
+$bg-color-counsel-line : #707070;
+$bg-color-counsel-table : #E2F1F2;
+$bg-color-counsel-table-sm-bg : #F0F0F0;
+$bg-color-counsel-paging-btn-off-border : #D0D0D0;
+$bg-color-counsel-paging-btn-on : #0A9BA4;
+$bg-color-counsel-write-bg : #E2F1F2;
+$bg-color-counsel-btn-01 : #FFFBE5;
+$bg-color-counsel-btn-02 : #F4FFF0;
+$bg-color-counsel-btn-03 : #F0FAFF;
+$bg-color-counsel-btn-04 : #FFF8EF;
+$bg-color-counsel-btn-05 : #FFFCEB;
+$bg-color-counsel-btn-border : #ffffff;
+// $bg-color-counsel-btn-border : #D1D1D1;
+$bg-color-order_kit-gradient-start : #F6A8A5;
+$bg-color-order_kit-gradient-end : #FE8F84;
+$bg-color-kit_more-sodogu-on : #FC9B84;
+$bg-color-kit_more-sodogu-on-border : #FF7250;
+$bg-color-kit_more-sodogu-off : #FFF8EF;
+$bg-color-link-gradient-start : #5C9BD0;
+$bg-color-link-gradient-end : #427AA8;
+$bg-color-contents-breath-gradient-start : #FAC8C8;
+$bg-color-contents-breath-gradient-end : #EFA8A8;
+$bg-color-contents-exercise-gradient-start : #6DE3D3;
+$bg-color-contents-exercise-gradient-end : #3BD8C6;
+$bg-color-contents-mind-gradient-start : #C0E4FC;
+$bg-color-contents-mind-gradient-end : #81BDE5;
+$bg-color-contents-audio-gradient-start : #FABA85;
+$bg-color-contents-audio-gradient-end : #FD9B4C;
+$bg-color-contents-btn-gradient-start : #ADADAD;
+$bg-color-contents-btn-gradient-end : #CECECE;
+$bg-color-contents-btn-border : #A0A0A0;
+$bg-color-contents-btn-01-on-gradient-start : #EFA8A8;
+$bg-color-contents-btn-01-on-gradient-end : #FAC8C8;
+$bg-color-contents-btn-01-on-border : #D8706D;
+$bg-color-contents-btn-02-on-gradient-start : #20D6BE;
+$bg-color-contents-btn-02-on-gradient-end : #62E2D1;
+$bg-color-contents-btn-02-on-border : #18AD98;
+$bg-color-contents-btn-03-on-gradient-start : #81BDE5;
+$bg-color-contents-btn-03-on-gradient-end : #C0E4FC;
+$bg-color-contents-btn-03-on-border : #4C9CD0;
+$bg-color-contents-btn-04-on-gradient-start : #FD9B4C;
+$bg-color-contents-btn-04-on-gradient-end : #FABA85;
+$bg-color-contents-btn-04-on-border : #D97827;
+$bg-color-contents-swiper-item-border : #cfcfcf;
+$bg-color-contents-swiper-item-border-none : #eeeeee;
+// $bg-color-contents-swiper-item-border : #1957FF;
+$bg-color-after_use_list-gradient-start : #8AB2D1;
+$bg-color-after_use_list-gradient-end : #7B95AA;
+$bg-color-after_use_list-top-line : #006A92;
+$bg-color-after_use_write-add-img-btn-off : #4A4A4A;
+$bg-color-after_use_write-add-img-btn-off-border : #575757;
+$bg-color-after_use_write-add-img-btn-on : #000000;
+$bg-color-after_use_write-add-img-name : #FFFFFFCC;
+$bg-color-after_use_write-add-img-name-border : #D1D1D1;
+$bg-color-info-gradient-start : #EDC9C8;
+$bg-color-info-gradient-end : #EE7268;
+
+
+$bg-color-btn-1: #A5A5A5;
+$bg-color-btn-1-border: #818181;
+$bg-color-btn-2: #FC9B84;
+$bg-color-btn-2-border: #FF7250;
+$bg-color-btn-3: #1864A7;
+$bg-color-btn-3-border: #004581;
+$bg-color-btn-4: #339cac;
+// $bg-color-btn-4: #222222;
+$bg-color-btn-4-border: #FFFFFF;
+$bg-color-btn-5: #339cac;// rgba(255, 255, 255, 0);
+// $bg-color-btn-5: #006a92;
+// $bg-color-btn-5: #A324C1;
+$bg-color-btn-5-border: #ffffff;
+// $bg-color-btn-5-border: #E6E5CF;
+$bg-color-btn-6: #FFC400;
+$bg-color-btn-6-border: #E6E5CF;
+
+$bg-color-btn-code: #006a92;
+$bg-color-tel-btn-code: #d8232f;
+$bg-color-btn-code-border: #181818;
+
+$bg-color-btn-cancel : #A8A8A8;
+$bg-color-btn-cancel-border : #E6E5CF;
+$bg-color-btn-text: #FFFFFF;
+
+$bg-color-btn-7-gradient-1: #FFEF19;
+$bg-color-btn-7-gradient-2: #FFE2C7;
+$bg-color-btn-7-gradient-3: #F4BABA;
+$bg-color-btn-7-gradient-4: #47DCC8;
+$bg-color-btn-7-gradient-5: #A7D3F0;
+$bg-color-btn-7-gradient-6: #5A90BB;
+$bg-color-btn-7-border: #D1D1D1;
+$bg-color-btn-7-text: #000000;
+
+
+
+/* font-color */
+$ft-color-shadow: #000000e6;
+$ft-color-shadow_2: #00000029;
+$ft-color-shadow_3: #00000033;
+$ft-color-shadow_4: #0000000F;
+$ft-color-side-menu: rgba(255, 255, 255, 1) !important;
+$ft-color-footer: #444444;
+$ft-color-main-btn: #FFFFFF;
+$ft-color-side-menu-hover: #FFF219;
+$ft-color-result-text-1 : #FFF219;
+$ft-color-result-text-2 : #FFEB00;
+$ft-color-result-text-3 : #FFFFFF;
+$ft-color-result-text-5 : #222222;
+$ft-color-d_start-title-sub-1: #4B4B4B;
+$ft-color-d_start-title-sub-2: #707070;
+$ft-color-d_start-title-sub-3: #222222;
+$ft-color-d_start-title-sub-4: #444444;
+$ft-color-d_mind_text-btn: #2528B2;
+$ft-color-d_mind_text-btn-hover: #FBF7DC;
+$ft-color-d_body_text-btn: #707070;
+$ft-color-d_body_text-btn-hover: #FBF7DC;
+$ft-color-login-title: #222222;
+$ft-color-login_info: #4B4B4B;
+$ft-color-info-btn: #222222;
+$ft-color-info-btn-white: #FFFFFF;
+$ft-color-info-sub-gray: #707070;
+$ft-color-counsel-table: #404040;
+$ft-color-counsel-table-line-right: #707070;
+$ft-color-counsel-table-line-bottom: #D0D0D0;
+$ft-color-counsel-paging-btn-off : #909090;
+$ft-color-counsel-paging-btn-on : #FFFFFF;
+$ft-color-counsel-btn : #707070;
+$ft-color-kit_more-sodogu-text-off : #404040;
+$ft-color-kit_more-sodogu-text-on : #FFFFFF;
+$ft-color-contents-btn-on : #4B4B4B;
+$ft-color-contents-icon-text : #FFFFFF;
+$ft-color-after_use_write-add-img-btn-text : #BABABA;
+$ft-color-after_use_write-add-img-btn-on-text : #FFEB00;
+$ft-color-after_use_write-add-img-name-text : #575757;
+$ft-color-after_use_write-add-img-name-text-complete : #989898;
+
+
