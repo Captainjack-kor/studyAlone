@@ -35,10 +35,12 @@
 
       <v-app-bar
         class="appbarTest"
+        :class="$mq"
         height="100"
         app
         color="#ffffff"
       >
+      
           <v-row class="align-center" no-gutters>
             
               <v-app-bar-nav-icon class="headerIcon" @click="drawerChecker()" src="@/assets/menu_x.png"> 
@@ -55,18 +57,17 @@
               <img width="120" aspect-ratio="1" src="@/assets/logo_x.png" />
             </v-btn>
               <v-spacer></v-spacer>
-            <img
-              width="210"
-              
-              src="@/assets/ci_x.png"
-              v-on:click="go_home()"
-            />
+              <img
+                width="210"
+                style="margin-left: -150px;"
+                src="@/assets/ci_x.png"
+              />
             <v-spacer></v-spacer>
-
             <v-btn
               color="#ffffff"
               elevation="0"
               style="height: 80px; width: 80px;"
+              @click="go_Login()"
             >
               <img
                 width="55"
@@ -86,94 +87,10 @@
 
       <v-main class="mainBG" >
         <v-container @click="turnoffChecker()">
-          <v-overlay v-if="drawer">
-          </v-overlay>
-          
-          <v-row align="center" justify="center">
-            <v-img
-              src="@/assets/icon_character_icheon_x.png"
-              max-width="265"
-              max-height="102"
-              style="margin-top: 95px; margin-left:316px;"
-              class="animation_big"
-              contain
-            />
-            <v-img src="@/assets/click_icon_x.png" 
-              max-width="222"
-              max-height="242"
-              style="margin-left: 40px; margin-top: 25px;"
-            />
-
-            <v-img
-              src="@/assets/main_title_x.png"
-              max-width="500"
-              max-height="102" 
-            />
-          </v-row>
-
-
-          <!-- <v-row>
-            <v-col
-              v-for="n in 5"
-              :key="n"
-              cols="0"
-            >
-              <v-card height="200">
-                TEST TEST TEST
-              </v-card>
-            </v-col>
-
-          
-          </v-row> 
-          
-          객체안에 src이미지 태그랑 연동했으면 모든 태그를연동할수 있겠다 !!!!
-          -->
-          
-          <v-row class="rowTest" style="flex-wrap: nowrap">
-            <v-col class="colcol col1"> 
-              <v-card class="cardEffect" height="200px" color="#fff9c4">
-                <div style="text-align:center; font-size:1.5rem; padding-top:40px">
-                  서비스 소개
-                </div>
-                <img src="@/assets/gif_01_img.png" style="width: 150px; heigth: 150px; "/>
-              </v-card>
-            </v-col>
-            <v-col class="colcol col2"> 
-              <v-card height="200px" color="#fff9c4">
-                <div style="text-align:center; font-size:1.5rem; padding-top:40px">
-                  자가 검진
-                </div>
-                <img src="@/assets/gif_02_img.png" style="width: 150px; heigth: 150px;"/>
-              </v-card>
-            </v-col>
-            <v-col class="colcol col3">
-              <v-card height="200px" color="#fff9c4">
-                <div style="text-align:center; font-size:1.5rem; padding-top:40px">
-                  마음소통창구
-                </div>
-                <img src="@/assets/gif_03_img.png" style="width: 150px; heigth: 150px;"/>
-              </v-card>
-            </v-col>
-            <v-col class="colcol col4"> 
-              <v-card height="200px" color="#fff9c4">
-                <div style="text-align:center; font-size:1.5rem; padding-top:40px">
-                  힐링콘텐츠 보기
-                </div>
-                <img src="@/assets/gif_04_img.png" style="width: 150px; heigth: 150px;"/>
-              </v-card>
-            </v-col>
-            <v-col class="colcol col5"> 
-              <v-card height="200px" color="#fff9c4">
-                <div style="text-align:center; font-size:1.5rem; padding-top:40px">
-                  사용후기
-                </div>
-                <img src="@/assets/gif_06_img.png" style="width: 150px; heigth: 150px;"/>
-              </v-card>
-            </v-col>
-          </v-row>
+          <v-overlay v-if="drawer" />
+          <router-view />
         </v-container>
       </v-main>
-
 
       <v-footer @click="turnoffChecker()">
         testtes
@@ -189,7 +106,6 @@ export default {
   data: () => ({
     message: 're-rendering!!!',
     drawer: null,
-    turnoff: null,
     items: [
       { title: '홈', icon: 'mdi-view-dashboard' },
       { title: '자가 검진', icon: 'mdi-image' },
@@ -210,7 +126,28 @@ export default {
   components: {
 
   },
-  methods: { 
+  methods: {
+    go_home() {
+      console.log("go home plz");
+      if(this.$router.currentRoute.path === "/") {
+        this.$router.go(this.$router.currentRoute);
+      } else {
+        this.$router.push("/");
+      }
+
+      // this.$router.push("/");
+    }, 
+
+    go_Login() {
+      console.log("go loginpage plz");
+      // console.log(this.$router.currentRoute.path)
+      if(this.$router.currentRoute.path === "/login") {
+         this.$router.go(this.$router.currentRoute);
+      } else {
+        this.$router.push("/login");
+      }
+    },
+
     drawerChecker() {
         // this.turnoff = !this.turnoff;
       if(!this.drawer) {
@@ -256,39 +193,27 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
   body {
     /* margin: 0rem; */
-  }
+  } 
 
-  /* .v-overlay--active .theme--dark {
-    opacity: 0.45 !important; 
-  } */
+  ::-webkit-scrollbar { 
+    width: 7px; /*스크롤바의 너비*/ 
+    height: 5px /* 가로 스크롤 수정 */
+  } 
+
+  ::-webkit-scrollbar-thumb { 
+    background-color: rgb(243, 94, 119); /*스크롤바의 색상*/ 
+  } 
+
+  ::-webkit-scrollbar-track { 
+    background-color: white; /*스크롤바 트랙 색상*/ 
+  }
 
   .v-app {
     justify-content: center;
   }
 
-  .appbarTest {
-    /* height: 10px; */
-  }
-
-  .headerRow {
-    /* background-color: rgb(226, 43, 98); */
-  } 
-
-  .header_dot {
-    /* margin-top: 48px;  */
-  }
-
   .hi{
     margin-left: 2.5rem;
-  }
-
-  .headerIcon {
-    /* position: relative; */
-    /* margin-left: 0.5rem; */
-    
-    /* color: red; */
-    
-    /* background-color: lightgray; */
   }
 
   .cardEffect {
@@ -306,9 +231,6 @@ export default {
     object-fit: cover;
   }
 
-  .v-main {
-  }
-
   div {
     font-family: 'Poor Story', cursive;
   }
@@ -318,25 +240,12 @@ export default {
   }
 
   .colcol {
-    /* background-color: red; */
     margin: 1rem;
-    /* background-color: #f3e5f5; */
-
-    /* margin: 0px auto; */
   }
 
   .colcol img {
     display: block;
     margin: 0px auto;
-    /* align-content: center; */
-  }
-
-  .rowTest {
-    /* margin: 0 4rem 0 4rem; */
-    /* display: flex;
-    flex-direction: row; */
-    /* margin-left: 3rem;
-    margin-right: 3rem; */
   }
 
   .colcol:hover {
@@ -348,9 +257,12 @@ export default {
 
   }
 
-
   .mainBG {
-    background: linear-gradient(15deg, #f8bbd0, #ffc1e3);;
+    background: linear-gradient(#f8bbd0, #ff6090);;
+  }
+
+  .appbarTest.sm {
+    background-color: red;
   }
 
 </style>
