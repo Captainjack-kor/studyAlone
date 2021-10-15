@@ -23,7 +23,7 @@
         />
       </v-row>
 
-      <v-row class="rowTest" style="flex-wrap: nowrap">
+      <v-row align="center" justify="center" class="rowTest" style="flex-wrap: nowrap">
         <v-col md="200" class="colcol col1"> 
           <v-card class="cardEffect" height="200px" color="#fff9c4">
             <div style="text-align:center; font-size:1.5rem; padding-top:40px">
@@ -66,20 +66,27 @@
         </v-col>
       </v-row>
 
+      
+      <v-row align="center" justify="center" @click="go_Login()">
+        <v-hover v-slot="{ hover }">
+          <v-card 
+            width="1000%" height="1000px"
+            style="margin-top: 100px; margin-bottom: 100px"
+            :elevation="hover ? 18 : 2"
+            :class="{ 'on-hover': hover }"
+          >
+            <v-col
+              :elevation="hover ? 18 : 2"
+              :class="{ 'on-hover': hover }"
+            >
+              hihi
+            </v-col>
 
-      <v-row align="center" justify="center">
-        <v-card 
-          width="1000%" height="1000px"
-          style="margin-top: 100px; margin-bottom: 100px"
-        >
-          <v-row>
-            hihi
-          </v-row>
-
-          <v-col>
-            byebye
-          </v-col>
-        </v-card>
+            <v-col>
+              byebye
+            </v-col>
+          </v-card>
+        </v-hover>
       </v-row>
   </div>
 </template>
@@ -93,7 +100,20 @@ export default {
   },
 
   created() {
-  }
+
+  },
+
+  methods: {
+    go_Login() {
+      console.log("go loginpage plz");
+      // console.log(this.$router.currentRoute.path)
+      if(this.$router.currentRoute.path === "/login") {
+        this.$router.go(this.$router.currentRoute);
+      } else {
+        this.$router.replace("/login");
+      }
+    },
+  },
 }
 </script>
 

@@ -144,7 +144,7 @@ export default {
       if(this.$router.currentRoute.path === "/login") {
          this.$router.go(this.$router.currentRoute);
       } else {
-        this.$router.push("/login");
+        this.$router.replace("/login");
       }
     },
 
