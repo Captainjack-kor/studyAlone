@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <v-app>
-      <v-navigation-drawer
+      
+      <!-- <v-navigation-drawer
         width= "500"
         v-model="drawer"
         app
@@ -31,8 +32,8 @@
             </v-list-item>
           </v-list>
         </div>
-      </v-navigation-drawer>
-
+      </v-navigation-drawer> -->
+    
       <v-app-bar
         class="appbarTest"
         :class="$mq"
@@ -41,12 +42,16 @@
         color="#ffffff"
       >
       
+      
           <v-row class="align-center" no-gutters>
+              <!-- <v-app-bar-nav-icon 
+                class="headerIcon" 
+                @click="drawerChecker()"
+                default
+              >
             
-              <v-app-bar-nav-icon class="headerIcon" @click="drawerChecker()" src="@/assets/menu_x.png"> 
-                <img width="55" src="@/assets/menu_x.png" />
-              </v-app-bar-nav-icon>
-            
+
+              </v-app-bar-nav-icon> -->
             <v-btn
               color="#ffffff"
               elevation="0"
@@ -86,8 +91,8 @@
       </v-app-bar>
 
       <v-main class="mainBG" >
-        <v-container @click="turnoffChecker()">
-          <v-overlay v-if="drawer" />
+        <v-container >
+          <!-- <v-overlay v-if="drawer" /> -->
           <router-view />
         </v-container>
       </v-main>
@@ -159,9 +164,9 @@ export default {
       
     },
     turnoffChecker() {
-      if(this.drawer) {
-        this.drawer = !this.drawer;
-      }
+      // if(this.drawer) {
+      //   this.drawer = !this.drawer;
+      // }
     },
     printText() {
       console.log("received an event !");
@@ -191,10 +196,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Gugi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
-  body {
-    /* margin: 0rem; */
-  } 
-
+ 
   ::-webkit-scrollbar { 
     width: 7px; /*스크롤바의 너비*/ 
     height: 5px /* 가로 스크롤 수정 */
@@ -206,10 +208,6 @@ export default {
 
   ::-webkit-scrollbar-track { 
     background-color: white; /*스크롤바 트랙 색상*/ 
-  }
-
-  .v-app {
-    justify-content: center;
   }
 
   .hi{
@@ -250,11 +248,6 @@ export default {
 
   .colcol:hover {
     cursor: pointer;
-  }
-
-
-  .col2:hover {
-
   }
 
   .mainBG {

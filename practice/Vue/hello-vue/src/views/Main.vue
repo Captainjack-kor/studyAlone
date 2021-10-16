@@ -1,27 +1,30 @@
 <template>
   <div>
-      <v-row align="center" justify="center">
-        <v-img
-          src="@/assets/icon_character_icheon_x.png"
-          max-width="265"
-          max-height="102"
-          style="margin-top: 50px; margin-left:176px;"
-          class="animation_big"
-          contain
-        />
-        <v-img src="@/assets/click_icon_x.png" 
-          max-width="222"
-          max-height="242"
-          style="margin-left: 40px; margin-top: 60px;"
-        />
-
-        <v-img
-          src="@/assets/main_title_x.png"
-          max-width="500"
-          max-height="102" 
-          style="margin-top: 50px; margin-bottom: 50px;"
-        />
-      </v-row>
+      <v-col align="center" justify="center">
+        <v-col>
+          <v-img
+            src="@/assets/icon_character_icheon_x.png"
+            max-width="265"
+            max-height="102"
+            style="margin-top: 50px; margin-left:176px;"
+            class="animation_big"
+            contain
+          />
+          <v-img src="@/assets/click_icon_x.png" 
+            max-width="222"
+            max-height="242"
+            style="margin-left: 40px; margin-top: 60px;"
+          />
+        </v-col>
+        <v-col>
+          <v-img
+            src="@/assets/main_title_x.png"
+            max-width="500"
+            max-height="102" 
+            style="margin-top: 50px; margin-bottom: 50px;"
+          />
+        </v-col>
+      </v-col>
 
       <v-row align="center" justify="center" class="rowTest" style="flex-wrap: nowrap">
         <v-col md="200" class="colcol col1"> 
@@ -67,16 +70,26 @@
       </v-row>
 
       
-      <v-row align="center" justify="center" @click="go_Login()">
-        <v-hover v-slot="{ hover }">
+      <v-row 
+        align="center" 
+        justify="center" 
+        @click="go_Login()"
+        class="dangdangTest"
+        :class="$mq"
+        
+      >
+        <v-hover 
+          v-slot="{ hover }"
+          class="mainBelowContents"
+        >
           <v-card 
-            width="1000%" height="1000px"
+            width="1000px" height="800px"
             style="margin-top: 100px; margin-bottom: 100px"
             :elevation="hover ? 18 : 2"
             :class="{ 'on-hover': hover }"
           >
             <v-col
-              :elevation="hover ? 18 : 2"
+              class="colHoverTEST"
               :class="{ 'on-hover': hover }"
             >
               hihi
@@ -120,6 +133,14 @@ export default {
 
 <style>
 
-  .animation_big.sm {
+  .on-hover {
+    cursor: pointer;
+  }
+  
+  .dangdangTest.sm {
+    background-color: red;
+  }
+
+  .mainBelowContents:hover {
   }
 </style>
