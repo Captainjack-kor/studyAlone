@@ -14,10 +14,12 @@ let obj = {};
 let arr = [1,2,3,4,5]
 // let arrTest = [a,"b","c","d","e"];
 
-obj.a = arr[0];
+// obj.a = arr[0];
+// obj.b = arr[1];
+// obj.c = arr[2];
+// obj.test = arr[3];
 
-obj.b = arr[1];
-
-obj.c = arr[2];
-
+for(let i = 0; i < 5; i++) {
+  obj.i = i; //i는 고정이 되버린 다.
+}
 console.log(obj);
