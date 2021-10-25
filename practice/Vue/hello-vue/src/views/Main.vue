@@ -2,6 +2,22 @@
   <div>
       <v-col align="center" justify="center">
         <v-col>
+          <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/5tf_LQnAjak?enablejsapi=1&version=3&playerapiid=ytplayer"
+            title="YouTube video player" 
+            frameborder="0" 
+            class="youtube-video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <div>
+          <button width="100" height="50" class="mr-5">재생 </button>
+          <!-- <div><a href="#" class="stopVideo">Stop Video</a></div> -->
+          <button @click="stop"  class="stop">stop </button>
+          <button width="100" height="50">다음 </button>
+          </div>
           <v-img
             src="@/assets/icon_character_icheon_x.png"
             max-width="265"
@@ -105,6 +121,12 @@
 </template>
 
 <script>
+import $ from 'jquery';
+
+// $('a.stop-video').click(function(){
+//     $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+// });
+
 export default {
   data() {
     return {
@@ -117,6 +139,10 @@ export default {
   },
 
   methods: {
+    stop() {
+      console.log("click")
+      $("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*'); 
+    },
     go_Login() {
       console.log("go loginpage plz");
       // console.log(this.$router.currentRoute.path)
@@ -142,5 +168,12 @@ export default {
   }
 
   .mainBelowContents:hover {
+  }
+
+  .stop {
+    border: 1px black solid;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: lightyellow;
   }
 </style>
