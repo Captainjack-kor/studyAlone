@@ -5,7 +5,7 @@
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/5tf_LQnAjak?enablejsapi=1&version=3&playerapiid=ytplayer"
+            src="https://www.youtube.com/embed/5tf_LQnAjak?enablejsapi=1"
             title="YouTube video player" 
             frameborder="0" 
             class="youtube-video"
