@@ -22,4 +22,7 @@ let arr = [1,2,3,4,5]
 for(let i = 0; i < 5; i++) {
   obj.i = i; //i는 고정이 되버린 다.
 }
+
+Object.assign("ee");
+
 console.log(obj);
