@@ -26,3 +26,6 @@ for(let i = 0; i < 5; i++) {
 Object.assign("ee");
 
 console.log(obj);
+
+
+//결과적으로 `obj[${}]`이 가능하다는 엄청난 발견을 했다.
