@@ -7,6 +7,7 @@
     <p> </p>
 
     <button v-on:click="allClear"> clear button </button>
+    
   </div>
 </template>
 
