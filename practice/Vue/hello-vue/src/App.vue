@@ -92,6 +92,7 @@
 
       <v-main class="mainBG" >
         <v-container >
+          <NewDiallogs />
           <!-- <v-overlay v-if="drawer" /> -->
           <router-view />
         </v-container>
@@ -105,6 +106,7 @@
 </template>
 
 <script>
+import NewDiallogs from "../src/components/NewDiallogs.vue";
 import { EventBus } from "./components/EventBus.js";
 export default {
   name: 'App',
@@ -129,7 +131,7 @@ export default {
     })
   }, 
   components: {
-
+    NewDiallogs,
   },
   methods: {
     go_home() {

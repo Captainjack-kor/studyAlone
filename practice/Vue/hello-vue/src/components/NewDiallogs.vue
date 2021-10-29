@@ -3,9 +3,9 @@
     <v-dialog
       v-model="dialog"
       persistent
-      max-width="290"
+      max-width="800"
     >
-      <template v-slot:activator="{ on, attrs }">
+      <!-- <template v-slot:activator="{ on, attrs }">
         <v-btn
           color="primary"
           dark
@@ -14,7 +14,7 @@
         >
           Open Dialog
         </v-btn>
-      </template>
+      </template> -->
       <v-card>
         <v-card-title class="text-h5">
           Use Google's location service?
@@ -46,7 +46,7 @@
   export default {
     data () {
       return {
-        dialog: false,
+        dialog: true,
       }
     },
   }
