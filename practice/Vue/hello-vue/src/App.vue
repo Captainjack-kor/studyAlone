@@ -93,6 +93,8 @@
       <v-main class="mainBG" >
         <v-container >
           <NewDiallogs />
+          <i class="icon ion-md-create"> </i>
+          <!-- <i class="ion-md-create"> </i> -->
           <!-- <v-overlay v-if="drawer" /> -->
           <router-view />
         </v-container>
