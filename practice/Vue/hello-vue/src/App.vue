@@ -92,7 +92,10 @@
 
       <v-main class="mainBG" >
         <v-container >
-          <NewDiallogs />
+          <!-- <NewDiallogs /> -->
+          <div>123123
+
+          </div>
           <i class="icon ion-md-create"> </i>
           <!-- <i class="ion-md-create"> </i> -->
           <!-- <v-overlay v-if="drawer" /> -->
@@ -108,7 +111,7 @@
 </template>
 
 <script>
-import NewDiallogs from "../src/components/NewDiallogs.vue";
+// import NewDiallogs from "../src/components/NewDiallogs.vue";
 import { EventBus } from "./components/EventBus.js";
 export default {
   name: 'App',
@@ -133,7 +136,7 @@ export default {
     })
   }, 
   components: {
-    NewDiallogs,
+    // NewDiallogs,
   },
   methods: {
     go_home() {
