@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <v-app>
+
+      
       
       <!-- <v-navigation-drawer
         width= "500"
@@ -92,15 +94,25 @@
 
       <v-main class="mainBG" >
         <v-container >
-          <!-- <NewDiallogs /> -->
+          <Compressor />
+          <NewDiallogs />
           <div>123123
+          <v-col 
+            width="300" 
+            height="300" 
+            style="background-color:red;"
+          >
+            <input ref="input" />
+          </v-col>
 
           </div>
           <i class="icon ion-md-create"> </i>
+          <Test />
           <!-- <i class="ion-md-create"> </i> -->
           <!-- <v-overlay v-if="drawer" /> -->
           <router-view />
         </v-container>
+      
       </v-main>
 
       <v-footer @click="turnoffChecker()">
@@ -111,8 +123,11 @@
 </template>
 
 <script>
-// import NewDiallogs from "../src/components/NewDiallogs.vue";
+import NewDiallogs from "../src/components/NewDiallogs.vue";
 import { EventBus } from "./components/EventBus.js";
+import Compressor from "../src/components/Compressor.vue";
+import Test from "../src/components/Test.vue";
+
 export default {
   name: 'App',
   data: () => ({
@@ -136,9 +151,15 @@ export default {
     })
   }, 
   components: {
-    // NewDiallogs,
+    NewDiallogs,
+    Compressor,
+    Test,
   },
+
   methods: {
+    focusInput() {
+      this.$refs.input.focus()
+    },
     go_home() {
       console.log("go home plz");
       if(this.$router.currentRoute.path === "/") {

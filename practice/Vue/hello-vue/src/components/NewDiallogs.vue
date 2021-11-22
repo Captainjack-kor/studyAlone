@@ -4,6 +4,7 @@
       v-model="dialog"
       persistent
       max-width="800"
+      @click:outside="test()"
     >
       <!-- <template v-slot:activator="{ on, attrs }">
         <v-btn
@@ -44,6 +45,11 @@
 
 <script>
   export default {
+    methods: {
+      test() {
+        console.log("밖에 클릭");
+      }
+    },  
     data () {
       return {
         dialog: true,
