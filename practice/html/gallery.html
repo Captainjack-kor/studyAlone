@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Education</title>
+        <!-- fav icon -->
+        <!-- <link href="assets/images/favicon.png" rel="shortcut icon" type="image/png"> -->
+        <!-- Bootstrap -->
+        <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- animated-css -->
+        <link href="assets/css/animate.min.css" rel="stylesheet" type="text/css">
+        <!-- font-awesome-css -->
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- owl-carrosel-css -->
+        <link href="assets/owl-carrosel/owl.carousel.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/owl-carrosel/owl.theme.default.min.css" rel="stylesheet" type="text/css">
+        <!-- Revulation Slider CSS -->
+        <link rel="stylesheet" type="text/css" href="assets/rs-plugin/css/settings.css" media="screen" />
+        <!-- Calender-css -->
+        <link href="assets/css/calender.css" rel="stylesheet" type="text/css">
+        <!-- offcanvas-menu-css -->
+        <link href="assets/css/offcanvas-menu.css" rel="stylesheet" type="text/css">
+        <!-- style-css -->
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+      
+      <style>
+
+        .button_position {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          /* gap: 10px; */
+        }
+      
+        .pageBtnLArrow {
+          margin-right: 10px;
+        }
+      
+        .pageBtnRArrow  {
+          margin-left: 10px;
+        }
+
+        .buttonGap {
+          margin-left: 3px;
+          margin-right: 3px;
+        }
+      </style>
+    </head>
+    <body class="calender-page sub-page">
+         <!-- start preloader -->
+        <div id="preloader">
+            <div class="preloader-inner">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <!-- end preloader -->
+
+				<div id="headers"></div>
+
+		
+        <section class="calender-section section-padding" style="padding-top: 0px;">
+					<h2 class="hidden">title</h2>
+					
+					<div class="container">
+						<div class="row">
+              <div class="calender-section section-padding" style="padding-top: 50px; padding-bottom: 0px;">
+                <div
+                  style="display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div class="page_title" data-detect="_25_page_title"> </div>
+                  <div class="_23_title_underbar title_underbar"> </div>
+
+                </div>
+
+                <section class="gallery-section section-padding">
+                  <ul class="gallery_pic_list" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+                    <!-- <li class="col-sm-4  container00">
+                      <img class="gallery_img" src="assets/images/gallery/1-2.jpg" />
+                      <div class="overlay00">
+                        <div class="content00">
+                          <i class="fa fa-search-plus"></i>
+                        </div>
+                      </div>
+                    </li> -->
+                  </ul> 
+
+                </section>
+                <div id="block_bg" onclick="overlay_close()"></div>
+                  
+                  
+                </div>
+              </div>
+              <div class="button_position" style="text-align: center;">
+                <div class="pageBtnLArrow"></div>
+                <div class="pageBtn"> </div>
+                <div class="pageBtnRArrow"></div>
+
+              </div>
+              <!-- <div 
+                style="
+                  margin-top: -20px; 
+                  margin-bottom: 60px;
+                  height: 50px;
+                  display: flex;
+                  justify-content: center;
+                  gap: 0.5rem;
+              ">
+                <button class="left"> 
+                  <img class="board_left_Btn_img" src="assets/images/leftBtnImg.png" />
+                </button>
+                <button class="buttonGap gallery_button gallery_button1"> 1 </button>
+                <button class="buttonGap gallery_button"> 2 </button>
+                <button class="buttonGap gallery_button"> 3 </button>
+                <button class="buttonGap gallery_button"> 4 </button>
+                <button class="right"> 
+                  <img class="board_right_Btn_img" src="assets/images/rightBtnImg.png" />
+                </button>
+              </div> -->
+              <div style="display: flex; justify-content: right;">
+                <img style="margin-top: -100px;" class="_25_gallery_char" src="assets/images/galleryChar.png" />
+              </div>
+
+            </section>
+            
+				<div id="footers"></div>
+
+				<div id="navigation"></div>
+
+
+        <div id="toTop" class="hidden-xs">
+            <i class="fa fa-chevron-up"></i>
+        </div> 
+
+        <script>
+          function overlay_close() {
+            document.getElementById('block_bg').style.display = "none";
+            document.getElementsByClassName('img_detail_view')[0].style.display = "none";
+          }
+        </script>
+
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/wow.js"></script>
+        <script src="assets/js/lightbox.js"></script>
+        <script src="assets/js/portfolio.js"></script>
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/ml.js"></script>
+        <script src="assets/js/galleryPaging.js"></script>
+				<!-- <script src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
+				<script type="text/javascript">   
+					$(document).ready( function() {
+            let def_header = $.Deferred();
+            let def_footer = $.Deferred();
+            let def_nav = $.Deferred();
+            $("#headers").load("assets/components/header.html", function(){
+                def_header.resolve();
+            });
+            $("#footers").load("assets/components/footer.html", function(){
+                def_footer.resolve();
+            });
+            $("#navigation").load("assets/components/navigationBar.html", function(){
+                def_nav.resolve();
+            });
+
+            $.when(def_header, def_footer, def_nav).done(function(){
+                initLanguage();
+
+                $.ajax({
+                    type: "GET",
+                    url: "assets/js/script.js",
+                    dataType: "script",
+                    cache: true
+                });
+
+
+                //TODO:
+              // $("#block_bg").click(function(event){
+              //   console.log("bg클릭");
+              // })
+
+              // $(".overlay00").click(function(event){  //팝업 Open 버튼 클릭 시 
+              //   $(".img_detail_view").css({
+              //       "top": (($(window).height() - $(".img_detail_view").outerHeight()) / 2 + $(window).scrollTop()) + "px",
+              //       "left": (($(window).width() - $(".img_detail_view").outerWidth()) / 2 + $(window).scrollLeft()) + "px"
+              //       //팝업창을 가운데로 띄우기 위해 현재 화면의 가운데 값과 스크롤 값을 계산하여 팝업창 CSS 설정
+              //   }); 
+              // });
+
+
+              // $(".overlay00").click(function(event){  //팝업 Open 버튼 클릭 시 
+              //   $("#block_bg").css("display","block"); //팝업 뒷배경 display block
+              //   $(".img_detail_view").css("display","block"); //팝업창 display block
+
+              //   $("body").css("overflow","hidden");//body 스크롤바 없애기
+              // });
+
+              // $("#block_bg").click(function(event){
+              //   $("#block_bg").css("display","none"); //팝업창 뒷배경 display none
+              //   $(".img_detail_view").css("display","none"); //팝업창 display none
+              //   $("body").css("overflow","auto");//body 스크롤바 생성
+              // });
+
+              // $(".overlay00").click(function(event){
+              //   $("#block_bg").css("display","none"); //팝업창 뒷배경 display none
+              //   $(".img_detail_view").css("display","none"); //팝업창 display none
+              //   $("body").css("overflow","auto");//body 스크롤바 생성
+              // });
+            })
+          });
+				</script>
+
+
+			<script>
+			</script>
+    </body>
+</html>
