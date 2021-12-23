@@ -11,7 +11,9 @@
     <script>
       if(localStorage.getItem('send_data')){ 
         var lastData = localStorage.getItem('send_data') 
+        document.getElementsByClassName('value_test')[0].innerText = lastData;
       }
+
       console.log(lastData);
     </script>
   </body>
