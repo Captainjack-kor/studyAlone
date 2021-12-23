@@ -14,13 +14,31 @@
 <div id="map" style="width:100%;height:350px;"></div>
 <p>개발자도구를 통해 직접 확인해 보세요.</p>
 
-<!-- require('dotenv').config(); -->
+
 
 <!--api 그냥 테스트해보자  -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은 APP KEY를 사용하세요"></script>
-<script>
+<script src="./config.js"></script>
+<script type="text/javascript">
+  console.log(config.apiKey);
+  // require('dotenv').config();
 
-console.log(process.env.APP_KEY);
+  // console.log(process.env.TEST_APP_KEY);
+  // let script = document.createElement('script');
+  // script.setAttribute("src", `//dapi.kakao.com/v2/maps/sdk.js?appkey=${config.apiKey}`)
+  // script.append('body');
+</script>
+<script 
+  id="script_test"
+  type="text/javascript" 
+  src="/test.js">
+  // src="//dapi.kakao.com/v2/maps/sdk.js?appkey=">
+</script>
+
+<script>
+// let test = document.getElementById('script_test').src + config.apiKey;
+// console.log(test);
+
+// console.log(process.env.APP_KEY);
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
         center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
