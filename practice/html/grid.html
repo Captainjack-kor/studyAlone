@@ -32,8 +32,51 @@
       "> </div>
     </div>
 
-    <script>
+    <script type="text/javascript">   
+      $(document).ready( function() {
+        let def_header = $.Deferred();
+        let def_footer = $.Deferred();
+        let def_nav = $.Deferred();
+        $("#headers").load("assets/components/header.html", function(){
+            def_header.resolve();
+        });
+        $("#footers").load("assets/components/footer.html", function(){
+            def_footer.resolve();
+        });
+        $("#navigation").load("assets/components/navigationBar.html", function(){
+            def_nav.resolve();
+        });
 
+        $.when(def_header, def_footer, def_nav).done(function(){
+            initLanguage();
+
+            $.ajax({
+                type: "GET",
+                url: "assets/js/script.js",
+                dataType: "script",
+                cache: true
+            });
+
+            //TODO:
+
+            $("#block_bg").css({
+              "height": scrollHeight + $("#footers").outerHeight() + $("#headers").outerHeight(),
+            })
+
+            $(window).scroll(function(){
+              $(".img_detail_view").css({
+                "top": ($(window).height() / 2 + $(window).scrollTop()) + "px",
+                "left": ($(window).width() / 2 + $(window).scrollLeft()) + "px",
+              }); 
+              
+              $("#block_bg").css({
+                  "top": ($(window).height() / 2 + $(window).scrollTop()) + "px",
+                  "left": ($(window).width() / 2 + $(window).scrollLeft()) + "px"
+              })
+            })
+        })
+        
+      });
     </script>
   </body>
 </html>
