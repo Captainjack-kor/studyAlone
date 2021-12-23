@@ -17,6 +17,16 @@
       <div style="background-color: powderblue; width: 300px; height: 300px;"></div>
       <div style="background-color: red; width: 300px; height: 300px;"></div>
       <div style="background-color: blue; width: 300px; height: 300px;"></div>
+
+      <button class="button_send_value" style="background-color: blue; width: 300px; height: 300px; 
+      font-size: 40px; font-weight: bold; cursor: pointer;">
+        게시글 1 
+      </button>
+      <button class="button_send_value" style="background-color: lightblue; width: 300px; height: 300px; 
+      font-size: 40px; font-weight: bold; cursor: pointer;">
+        게시글 2 
+      </button>
+
     </div>
 
 
@@ -32,7 +42,7 @@
       "> </div>
     </div>
 
-    <script type="text/javascript">   
+    <!-- <script type="text/javascript">   
       $(document).ready( function() {
         let def_header = $.Deferred();
         let def_footer = $.Deferred();
@@ -77,6 +87,17 @@
         })
         
       });
+    </script> -->
+    
+    <script>
+      for(let i = 0; i < 10; i++) {
+        document.getElementsByClassName('button_send_value')[i].addEventListener('click', function(){
+        console.log("감사합니당");
+        window.open("/practice/html/testPage.html");
+        // document.getElementsByClassName('value_test')[0].innerText = "엥";
+      })
+      }
+      
     </script>
   </body>
 </html>
