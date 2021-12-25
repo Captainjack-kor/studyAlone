@@ -1,3 +1,5 @@
+//api search type = title (title, contents);
+//serarch- text = 검색어 ;
 let page = 0;
 let maxPage = 10;
 document.getElementById("left").addEventListener("click", () => {
