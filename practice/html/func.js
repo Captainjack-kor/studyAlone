@@ -1,5 +1,9 @@
 //api search type = title (title, contents);
-//serarch- text = 검색어 ;
+//search - text = 검색어 ;
+//검색기능, 사진 버그 수정, velog뭐 써여했는데..? 머드라... [게시글 구현이였을 듯]
+
+
+//검
 let page = 0;
 let maxPage = 10;
 document.getElementById("left").addEventListener("click", () => {
