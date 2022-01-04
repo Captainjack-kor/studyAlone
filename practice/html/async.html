@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>async test</title>
+  </head>
+  <body>
+
+    <div>
+      테스트페이지입니다.
+    </div>
+    <button id="button">
+      버튼
+    </button>
+
+    <div class="loading">
+      로딩중...
+    </div>
+
+    <style>
+      .loading {
+        display: none;
+        width: 500px;
+        height: 500px;
+        background-color: red;
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+    </style>
+    <script>
+      function testFunc(hi) {
+        alert("hi: " + hi);
+        // console.log("value: " + hi);
+      }
+
+      // function getData(callbackFunc) {
+      //   document.getElementsByClassName("loading")[0].style.display = "block";
+      //   setTimeout(function(response){
+      //     console.log("로딩중입니다!!!");
+      //     callbackFunc(response);
+      //   }, 3000)
+      // }
+
+      // getData(function(tableData) {
+      //   console.log("here is!"); // $.get()의 response 값이 tableData에 전달됨
+      //   document.getElementsByClassName("loading")[0].style.display = "none";
+      // });
+
+
+      document.getElementById('button').addEventListener("click", () => {
+        function getData() {
+          return new Promise(function(resolve, reject) {
+            var data = 100;
+              document.getElementsByClassName("loading")[0].style.display = "block";
+              setTimeout(function(response) {
+                resolve(data);
+              }, 3000)
+          });
+        }
+        // resolve()의 결과 값 data를 resolvedData로 받음
+        getData().then(function(resolvedData) {
+          console.log(resolvedData); // 100
+          document.getElementsByClassName("loading")[0].style.display = "none";
+        });
+      })
+
+
+      
+    </script>
+  </body>
+</html>
