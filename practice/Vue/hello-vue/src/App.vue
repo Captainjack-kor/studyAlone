@@ -64,13 +64,8 @@
               <img width="120" aspect-ratio="1" src="@/assets/logo_x.png" />
             </v-btn>
               <v-spacer></v-spacer>
-              <img
-                width="210"
-                style="margin-left: -150px;"
-                src="@/assets/ci_x.png"
-              />
             <v-spacer></v-spacer>
-            <v-btn
+            <!-- <v-btn
               color="#ffffff"
               elevation="0"
               style="height: 80px; width: 80px;"
@@ -88,15 +83,14 @@
               v-on:click="sideMenuToggle()"
             >
               <img width="55" src="@/assets/menu_x.png" />
-            </v-btn>
+            </v-btn> -->
           </v-row>
       </v-app-bar>
 
       <v-main class="mainBG" >
         <v-container >
           <Compressor />
-          <NewDiallogs />
-          <div>123123
+          <!-- <NewDiallogs /> -->
           <v-col 
             width="300" 
             height="300" 
@@ -105,14 +99,32 @@
             <input ref="input" />
           </v-col>
 
-          </div>
           <i class="icon ion-md-create"> </i>
           <Test />
           <!-- <i class="ion-md-create"> </i> -->
           <!-- <v-overlay v-if="drawer" /> -->
+
+          <v-btn @click="countTest[0]++">
+            올라가: {{ countTest[0] }}
+          </v-btn>
+          <v-btn @click="countTest[1]++">
+            올라가2: {{ countTest[1] }}
+          </v-btn>
+          <v-btn @click="countTest[2]++">
+            올라가3: {{ countTest[2] }}
+          </v-btn>
+
+            <v-row class="justify-center align-center  mt-10 mb-10">
+              <v-row class="justify-center align-center" v-for="(el, index) in products" :key="index">
+                <v-row class="justify-center align-center mt-5 mb-5">
+                  {{ el }}   
+                </v-row>
+                신고수: {{ reportCount[index] }} &nbsp;
+                <v-btn width="100" height="50" @click="reportCounter(index)"> 허위매물신고버튼 </v-btn>
+              </v-row>
+            </v-row>
           <router-view />
         </v-container>
-      
       </v-main>
 
       <v-footer @click="turnoffChecker()">
@@ -123,7 +135,7 @@
 </template>
 
 <script>
-import NewDiallogs from "../src/components/NewDiallogs.vue";
+// import NewDiallogs from "../src/components/NewDiallogs.vue";
 import { EventBus } from "./components/EventBus.js";
 import Compressor from "../src/components/Compressor.vue";
 import Test from "../src/components/Test.vue";
@@ -142,7 +154,10 @@ export default {
       { title: '협업기관', icon: 'mdi-help-box' },
     ],
     right: null,
-    
+    products: ['역삼동원룸', '천호동원룸', '마포구원룸'],
+    price: ["100만원", "50만원", "200만원"],
+    reportCount: [0,0,0],
+    countTest: [0,0,0],
   }),
   created() {
     console.log(EventBus); 
@@ -150,13 +165,24 @@ export default {
       console.log("received value: ", value);
     })
   }, 
+  // renderTriggered() {
+  //   console.log(this.countTest);
+  // },
   components: {
-    NewDiallogs,
+    // NewDiallogs,
     Compressor,
     Test,
   },
 
   methods: {
+    reportCounter(index) {
+      // const newArr = Object.assign([], this.reportCount);
+      const newArr = this.reportCount.slice();
+      newArr[index]++;
+      this.reportCount = newArr;
+      // this.reportCount[index] += 1;
+      console.log(this.reportCount);
+    },
     focusInput() {
       this.$refs.input.focus()
     },
@@ -213,8 +239,9 @@ export default {
       return this.$store.state.count;
       // return console.log(this.$store);
       // return this.$store.state.count;
-    }
-  }
+    },
+  },
+
 }
 </script>
 
@@ -279,7 +306,7 @@ export default {
   }
 
   .mainBG {
-    background: linear-gradient(#f8bbd0, #ff6090);;
+    /* background: linear-gradient(#f8bbd0, #ff6090);; */
   }
 
   .appbarTest.sm {

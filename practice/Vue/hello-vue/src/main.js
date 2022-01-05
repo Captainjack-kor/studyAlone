@@ -10,7 +10,9 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 
 Vue.use(BootstrapVue);
-Vue.config.productionTip = false
+// Vue.config.productionTip = false;
+Vue.config.productionTip = false;
+
 Vue.use(VueMq, {
   breakpoints: {
     sm: 960,
