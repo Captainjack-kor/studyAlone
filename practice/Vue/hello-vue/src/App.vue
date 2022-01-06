@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <v-app>
-
-      
-      
+    <v-app style="background-color: black;">
       <!-- <v-navigation-drawer
         width= "500"
         v-model="drawer"
@@ -39,96 +36,39 @@
       <v-app-bar
         class="appbarTest"
         :class="$mq"
-        height="100"
+        height="70"
         app
         color="#ffffff"
       >
-      
-      
-          <v-row class="align-center" no-gutters>
-              <!-- <v-app-bar-nav-icon 
-                class="headerIcon" 
-                @click="drawerChecker()"
-                default
-              >
-            
-
-              </v-app-bar-nav-icon> -->
-            <v-btn
-              color="#ffffff"
-              elevation="0"
-              style="width: 130px; height: 80px; margin-right: 30px;"
-              v-on:click="go_home()"
-              class="hi"
-            >
-              <img width="120" aspect-ratio="1" src="@/assets/logo_x.png" />
-            </v-btn>
-              <v-spacer></v-spacer>
-            <v-spacer></v-spacer>
-            <!-- <v-btn
-              color="#ffffff"
-              elevation="0"
-              style="height: 80px; width: 80px;"
-              @click="go_Login()"
-            >
-              <img
-                width="55"
-                src="@/assets/login_x.png"
-              />
-            </v-btn>
-            <v-btn
-              color="#ffffff"
-              elevation="0"
-              style="height: 80px; width: 80px;"
-              v-on:click="sideMenuToggle()"
-            >
-              <img width="55" src="@/assets/menu_x.png" />
-            </v-btn> -->
-          </v-row>
+        <v-row class="align-center" no-gutters>
+          <v-btn
+            color="#ffffff"
+            elevation="0"
+            style="margin-left: 100px; width: 130px; height: 70px; margin-right: 30px;"
+            v-on:click="go_home()"
+            class="logo_btn"
+          >
+            CaptainJack
+            <!-- <img width="120" aspect-ratio="1" src="@/assets/logo_x.png" /> -->
+          </v-btn>
+          <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
+        </v-row>
       </v-app-bar>
 
-      <v-main class="mainBG" >
-        <v-container >
-          <Compressor />
+      <v-main class="mainBG" style="margin-left: 100px; margin-right: 100px;">
+        <v-container style="margin-top: 30px;">
+          <!-- <Compressor /> -->
           <!-- <NewDiallogs /> -->
-          <v-col 
-            width="300" 
-            height="300" 
-            style="background-color:red;"
-          >
-            <input ref="input" />
-          </v-col>
 
-          <i class="icon ion-md-create"> </i>
-          <Test />
-          <!-- <i class="ion-md-create"> </i> -->
-          <!-- <v-overlay v-if="drawer" /> -->
-
-          <v-btn @click="countTest[0]++">
-            올라가: {{ countTest[0] }}
-          </v-btn>
-          <v-btn @click="countTest[1]++">
-            올라가2: {{ countTest[1] }}
-          </v-btn>
-          <v-btn @click="countTest[2]++">
-            올라가3: {{ countTest[2] }}
-          </v-btn>
-
-            <v-row class="justify-center align-center  mt-10 mb-10">
-              <v-row class="justify-center align-center" v-for="(el, index) in products" :key="index">
-                <v-row class="justify-center align-center mt-5 mb-5">
-                  {{ el }}   
-                </v-row>
-                신고수: {{ reportCount[index] }} &nbsp;
-                <v-btn width="100" height="50" @click="reportCounter(index)"> 허위매물신고버튼 </v-btn>
-              </v-row>
-            </v-row>
+          <!-- <i class="icon ion-md-create"> </i> -->
+          <!-- <Test /> -->
           <router-view />
         </v-container>
       </v-main>
 
       <v-footer @click="turnoffChecker()">
-        testtes
+        footer
       </v-footer>
     </v-app>
   </div>
@@ -137,8 +77,8 @@
 <script>
 // import NewDiallogs from "../src/components/NewDiallogs.vue";
 import { EventBus } from "./components/EventBus.js";
-import Compressor from "../src/components/Compressor.vue";
-import Test from "../src/components/Test.vue";
+// import Compressor from "../src/components/Compressor.vue";
+// import Test from "../src/components/Test.vue";
 
 export default {
   name: 'App',
@@ -160,7 +100,7 @@ export default {
     countTest: [0,0,0],
   }),
   created() {
-    console.log(EventBus); 
+    // console.log(EventBus); 
     EventBus.$on('triggerTest', function(value) {
       console.log("received value: ", value);
     })
@@ -170,8 +110,8 @@ export default {
   // },
   components: {
     // NewDiallogs,
-    Compressor,
-    Test,
+    // Compressor,
+    // Test,
   },
 
   methods: {
@@ -265,7 +205,7 @@ export default {
     background-color: white; /*스크롤바 트랙 색상*/ 
   }
 
-  .hi{
+  .logo_btn{
     margin-left: 2.5rem;
   }
 
@@ -285,11 +225,12 @@ export default {
   }
 
   div {
-    font-family: 'Poor Story', cursive;
+    font-family: Georgia, serif;
+    /* font-family: 'Poor Story', cursive; */
   }
 
   .menuList {
-    font-family: 'Nanum Pen Script', cursive;
+    /* font-family: 'Nanum Pen Script', cursive; */
   }
 
   .colcol {

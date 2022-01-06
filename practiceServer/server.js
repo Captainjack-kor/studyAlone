@@ -1,16 +1,43 @@
 //import express from 'express';
+const dotenv = require('dotenv');
 
-const express = require('express')
+const express = require('express');
 //const http = require("http");
 const cors = require('cors');
 //const PORT = 8080;
-const ip = "localhost";
+
+dotenv.config();
+// require('dotenv').config()
+const ip = process.env.APP_IP;
 const app = express();
 
 var bodyParser = require('body-parser')
 
+let count = [0,0,0];
 app.use(bodyParser.json())
 app.use(cors());
+
+app.get('/1', function (req,res) {
+  // console.log(res);
+  count[0]++;
+  console.log(count);
+  res.send(String(count[0]));
+});
+
+app.get('/2', function (req,res) {
+  // console.log(res);
+  count[1]++;
+  console.log(count);
+  res.send(String(count[1]));
+});
+
+app.get('/3', function (req,res) {
+  // console.log(res);
+  count[2]++;
+  console.log(count);
+  res.send(String(count[2]));
+});
+
 
 app.post('/lower', (req, res) => {
   //console.log(req.body);
