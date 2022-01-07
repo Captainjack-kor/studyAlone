@@ -4,7 +4,7 @@
       Stack
     </div>
     <!-- 클릭하면 진행한 프로젝트 나오게 하기? -->
-    <v-row style="background-color: black; height: 100px;">
+    <v-row style="height: 100px;">
       <v-hover v-slot="{ hover }">
         <v-card
           :elevation="hover ? 0 : 12"
@@ -30,12 +30,32 @@
         <v-img src="@/assets/typescript.png" ></v-img>
       </v-col>
     </v-row>
+
+    <form @submit.prevent="exec_func()" style="margin-top: 100px;">
+      <div>
+        <label for="username">id: </label>
+        <input id="username" type="text" 
+          v-model="username"
+        />
+      </div>
+      <div>
+        <label for="password">pw: </label>
+        <input id="password" type="password" 
+          v-model="password"
+        />
+      </div>
+      <button type="submit">LOGIN</button>
+    </form>
+    <!-- <button @click="exec_func()">
+      API TEST
+    </button> -->
   </div>
 </template>
 
 <script>
+// import axios from 'axios';
 // import $ from 'jquery';
-
+import { testAPI } from '@/api/index.js';
 // $('a.stop-video').click(function(){
 //     $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
 // });
@@ -43,7 +63,9 @@
 export default {
   data() {
     return {
-
+      username: "",
+      password: "",
+      info: {},
     }
   },
 
@@ -63,6 +85,17 @@ export default {
       } else {
         this.$router.replace("/login");
       }
+    },
+
+    async exec_func() {
+      const userData = {
+        username: this.username,
+        password: this.password,
+      }
+      const response = await testAPI(userData);
+      console.log(response);
+      this.username = "";
+      this.password = "";
     },
   },
 }
@@ -92,5 +125,10 @@ export default {
   .main_stack_logo .v-image {
     width: 100px;
     height: 100px;
+  }
+
+  #username, 
+  #password {
+    border: 1px solid black;
   }
 </style>

@@ -38,6 +38,16 @@ app.get('/3', function (req,res) {
   res.send(String(count[2]));
 });
 
+app.post('/test', function (req,res) {
+  // console.log(res);
+  // console.log(count);
+
+  console.log("ID: " + req.body.username);
+  console.log("PW: " + req.body.password);
+  console.log("login!!!");
+  res.send("login TEST");
+});
+
 
 app.post('/lower', (req, res) => {
   //console.log(req.body);

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-app style="background-color: black;">
+    <v-app>
       <!-- <v-navigation-drawer
         width= "500"
         v-model="drawer"
