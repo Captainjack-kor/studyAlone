@@ -29,3 +29,4 @@ function right() {
     document.getElementById("page").textContent = page;
   }
 }
+
