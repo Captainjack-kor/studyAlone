@@ -9,9 +9,9 @@
         <v-card
           :elevation="hover ? 0 : 12"
         >
-            <v-col class="main_stack_logo">
-              <v-img src="@/assets/javascript.png" ></v-img>
-            </v-col>
+            <!-- <v-col class="main_stack_logo">
+              <v-img v-if="$route.path !== '/'" src="@/assets/javascript.png" ></v-img>
+            </v-col> -->
         </v-card>
       </v-hover>
       <v-col class="main_stack_logo">
@@ -48,7 +48,6 @@ export default {
   },
 
   created() {
-
   },
 
   methods: {
