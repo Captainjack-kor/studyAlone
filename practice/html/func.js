@@ -30,4 +30,27 @@ function right() {
   }
 }
 
+window.location.href
+// http://localhost:8080/contents?type=0
+
+window.location.protocol
+// http:
+
+window.location.host
+// localhost:8080
+
+window.location.hostname
+//localhost
+
+window.location.port
+//8080
+
+window.location.pathname
+// /contents
+
+window.location.search
+// // ?type=0
+
+var target = typeof window.location.href;
+console.log(target);
 
