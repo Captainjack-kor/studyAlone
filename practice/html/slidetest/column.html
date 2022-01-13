@@ -1,0 +1,45 @@
+<!-- 자동 세로 슬라이드 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{margin:0;padding:0;}
+    ul,li{list-style:none;}
+    .slide{height:300px;overflow:hidden;}
+    .slide ul{height:calc(100% * 4);animation:slide 8s infinite;}
+    .slide li{height:calc(100% / 4);}
+    .slide li:nth-child(1){background:#ffa;}
+    .slide li:nth-child(2){background:#faa;}
+    .slide li:nth-child(3){background:#afa;}
+    .slide li:nth-child(4){background:#aaf;}
+    @keyframes slide {
+      0% {margin-top:0;}
+      /* 5% {margin-top:0;} */
+      10% {margin-top:0;}
+      /* 22% {margin-top:-300px;} */
+      25% {margin-top:-300px;}
+      /* 28% {margin-top:-300px;} */
+      30% {margin-top:-300px;}
+      35% {margin-top:-300px;
+      }
+      50% {margin-top:-600px;}
+      60% {margin-top:-600px;}
+      75% {margin-top:-900px;}
+      85% {margin-top:-900px;}
+      100% {margin-top:0;}
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </div>
+</body>
+</html>
