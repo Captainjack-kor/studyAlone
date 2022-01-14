@@ -49,7 +49,30 @@
       진짜 개빡치는 박스
       진짜 개빡치는 박스
     </div>
+
+    <div>
+      overlay Test
+    </div>
+
+    <div>
+      <img src="./05-6-540x304.jpeg" 
+        style="margin: 10px; width: 250px; height: 250px; border-radius: 50%;"
+      />
+      <div class="overlay"></div>
+    </div>
     <style>
+      .overlay {
+        position: absolute;
+        /* top: 80%; */
+        /* top: 165%; */
+        margin-top: -260px;
+        background-color: black;
+        opacity: 0.5;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+      }
+
       #drag_effect::selection {
         background-color: yellow;
         /* font-weight:lighter;
