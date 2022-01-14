@@ -1,0 +1,22 @@
+{
+  "name": "studyalone",
+  "version": "1.0.0",
+  "description": "typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Captainjack-kor/studyAlone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Captainjack-kor/studyAlone/issues"
+  },
+  "homepage": "https://github.com/Captainjack-kor/studyAlone#readme",
+  "devDependencies": {
+    "eslint-plugin-vue": "^8.3.0"
+  }
+}
