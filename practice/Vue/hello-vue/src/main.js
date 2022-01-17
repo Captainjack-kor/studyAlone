@@ -7,7 +7,7 @@ import VueMq from "vue-mq";
 import BootstrapVue from "bootstrap-vue";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
-
+import axios from "axios";
 
 Vue.use(BootstrapVue);
 // Vue.config.productionTip = false;
@@ -22,9 +22,12 @@ Vue.use(VueMq, {
   defaultBreakpoint: "lg"
 });
 
-new Vue({
+const vm = new Vue({
+  vuetify,
   store,
   router,
-  vuetify,
-  render: h => h(App),
-}).$mount('#app')
+  axios,
+  render: h => h(App)
+}).$mount("#app");
+
+export { vm };

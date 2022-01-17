@@ -60,9 +60,9 @@
         <v-container style="margin-top: 30px;">
           <!-- <Compressor /> -->
           <!-- <NewDiallogs /> -->
-
           <!-- <i class="icon ion-md-create"> </i> -->
           <!-- <Test /> -->
+          <diallogtest />
           <router-view />
         </v-container>
       </v-main>
@@ -79,6 +79,7 @@
 import { EventBus } from "./components/EventBus.js";
 // import Compressor from "../src/components/Compressor.vue";
 // import Test from "../src/components/Test.vue";
+import diallogtest from "./components/diallogtest.vue";
 
 export default {
   name: 'App',
@@ -112,6 +113,7 @@ export default {
     // NewDiallogs,
     // Compressor,
     // Test,
+    diallogtest,
   },
 
   methods: {
