@@ -60,6 +60,8 @@
       />
       <div class="overlay"></div>
     </div>
+
+    <button class="url_Button_Test"> IOS 왜 안됨 </button>
     <style>
       .overlay {
         position: absolute;
@@ -92,7 +94,12 @@
       document.getElementById("page").textContent = "0";
       
       // display: none !important css적용 기능
-      document.getElementsByClassName('m_board_file_list')[0].setAttribute('style', 'display: none !important');
+      // document.getElementsByClassName('m_board_file_list')[0].setAttribute('style', 'display: none !important');
+
+      document.getElementsByClassName('url_Button_Test')[0].addEventListener("click", () => {
+        location.href = "https://www.naver.com";
+        console.log("clicked");
+      });
     </script>
     <script src="func.js"></script>
     
