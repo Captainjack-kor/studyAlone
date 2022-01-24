@@ -62,8 +62,14 @@
           <!-- <NewDiallogs /> -->
           <!-- <i class="icon ion-md-create"> </i> -->
           <!-- <Test /> -->
-          <diallogtest />
+          <!-- <diallogtest /> -->
           <router-view />
+
+          <v-btn @click="get_title()"> api call </v-btn>
+          <div> 
+            여기에 값이 표시 됨
+           {{ title }} 
+          </div>
         </v-container>
       </v-main>
 
@@ -79,7 +85,7 @@
 import { EventBus } from "./components/EventBus.js";
 // import Compressor from "../src/components/Compressor.vue";
 // import Test from "../src/components/Test.vue";
-import diallogtest from "./components/diallogtest.vue";
+// import diallogtest from "./components/diallogtest.vue";
 
 export default {
   name: 'App',
@@ -99,6 +105,7 @@ export default {
     price: ["100만원", "50만원", "200만원"],
     reportCount: [0,0,0],
     countTest: [0,0,0],
+    title: "",
   }),
   created() {
     // console.log(EventBus); 
@@ -113,7 +120,7 @@ export default {
     // NewDiallogs,
     // Compressor,
     // Test,
-    diallogtest,
+    // diallogtest,
   },
 
   methods: {
@@ -173,6 +180,20 @@ export default {
     },
     decrement() {
       this.$store.commit('decrement');
+    },
+
+    // addNewVideoToLocalStorage() {
+    //   let id = getIdFromURL(this.videosUrl[0].url);
+    //   let title = await getYoutubeTitle(id, async (e, t) => await t);
+    // }
+
+    async get_title() {
+      var getYoutubeTitle = require('get-youtube-title');
+      let id = 'QR1jRM4XTyc';
+      await getYoutubeTitle(id, (e, t) => {
+        return this.title = t
+      })
+      console.log(this.title);
     }
   },
 

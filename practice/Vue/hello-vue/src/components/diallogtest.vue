@@ -170,13 +170,16 @@ export default {
       }
     },
 
-    // closePopup(index) {
+    closePopup() {
       // console.log(this.popupInfo[index].idx);
       
       // this.newPopupInfo = this.newPopupInfo.filter(
       //   element => element.idx !== index
       // );
-    // },
+
+      // document.getElementsByClassName("popupDialog")[0].style.display = "none";
+      this.newPopupInfo = [];
+    },
 
     setCookie(name, value) {
       var today = new Date();
