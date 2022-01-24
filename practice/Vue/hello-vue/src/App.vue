@@ -70,6 +70,30 @@
             여기에 값이 표시 됨
            {{ title }} 
           </div>
+
+          <!-- <v-select
+            cols="12"
+            sm="3"
+            class=""
+            @change="setD"
+            :items="products"
+            outlined
+            label="Select Category"
+          ></v-select> -->
+
+          <!-- <input v-if="checked" class="check" type="checkbox" :checked="true" v-model="checked"/> -->
+
+          <!-- <div v-for="(el, index) in Object.values(people[0])" :key="index">
+            <div v-if="typeof(el) === 'string' ">
+              <div> {{ el }} </div>
+            </div>
+            <div v-else >
+              <div v-if="people[0].messaggi[newIndex].text !== undefined"
+              > {{ people[0].messaggi[newIndex].text }}
+
+              </div>
+            </div>
+          </div> -->
         </v-container>
       </v-main>
 
@@ -106,6 +130,33 @@ export default {
     reportCount: [0,0,0],
     countTest: [0,0,0],
     title: "",
+    newIndex: this.people[0].messaggi.length, //3
+    people: [
+      {
+        nome: "Francesco Rossio",
+        immagine: "img/profile1.jpg",
+        oraUltimoMessaggio: "13:32",
+        messaggiNonLetti: "2",
+        visibile: true,
+        messaggi: [
+            {
+            date: '10/01/2020 15:30:55',
+            text: 'Hei tu, sei molto carino, sai?',
+            status: 'sent'
+            },
+            {
+            date: '10/01/2020 15:50:00',
+            text: 'Sai che mi piacciono le ciabatte?',
+            status: 'sent'
+            },
+            {
+            date: '10/01/2020 16:15:22',
+            text: 'Ora sai tutto di me.',
+            status: 'received'
+            },
+        ],
+      }
+    ],
   }),
   created() {
     // console.log(EventBus); 
@@ -124,6 +175,10 @@ export default {
   },
 
   methods: {
+    testfunc() {
+      // this.people[0].messaggi[this.newIndex].text;
+      // this.newIndex++;
+    },
     reportCounter(index) {
       // const newArr = Object.assign([], this.reportCount);
       const newArr = this.reportCount.slice();
