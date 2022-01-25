@@ -88,12 +88,26 @@
               <div> {{ el }} </div>
             </div>
             <div v-else >
-              <div v-if="people[0].messaggi[newIndex].text !== undefined"
-              > {{ people[0].messaggi[newIndex].text }}
-
+              <div v-if="init < newIndex">
+                {{ el[index].text }}
               </div>
             </div>
           </div> -->
+
+           <div id="mySidenav" class="sidenav" style="background-color: black;">
+              <a href="javascript:void(0)" class="closebtn" @click="closeNav()">&times;</a>
+                <p style=color:white>TESEST
+                TEST TEST TEST TEST</p>
+            
+            </div>
+
+            <span @click="openNav()"><img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" width="40px" style="padding-top: 40px; padding-left: 40px;"></span>
+
+            <div id="main">
+          </div>
+
+
+
         </v-container>
       </v-main>
 
@@ -130,33 +144,6 @@ export default {
     reportCount: [0,0,0],
     countTest: [0,0,0],
     title: "",
-    newIndex: this.people[0].messaggi.length, //3
-    people: [
-      {
-        nome: "Francesco Rossio",
-        immagine: "img/profile1.jpg",
-        oraUltimoMessaggio: "13:32",
-        messaggiNonLetti: "2",
-        visibile: true,
-        messaggi: [
-            {
-            date: '10/01/2020 15:30:55',
-            text: 'Hei tu, sei molto carino, sai?',
-            status: 'sent'
-            },
-            {
-            date: '10/01/2020 15:50:00',
-            text: 'Sai che mi piacciono le ciabatte?',
-            status: 'sent'
-            },
-            {
-            date: '10/01/2020 16:15:22',
-            text: 'Ora sai tutto di me.',
-            status: 'received'
-            },
-        ],
-      }
-    ],
   }),
   created() {
     // console.log(EventBus); 
@@ -249,7 +236,17 @@ export default {
         return this.title = t
       })
       console.log(this.title);
-    }
+    },
+
+    /* Set the width of the side navigation to 250px */
+    openNav() {
+      document.getElementById("mySidenav").style.width = "400px";
+    },
+
+    /* Set the width of the side navigation to 0 */
+    closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    },
   },
 
   computed: {
@@ -330,6 +327,58 @@ export default {
 
   .appbarTest.sm {
     background-color: red;
+  }
+
+
+  /* The side navigation menu */
+  .sidenav {
+      height: 100%; /* 100% Full-height */
+      width: 0; /* 0 width - change this with JavaScript */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Stay on top */
+      top: 0;
+      left: 0;
+      background-color: #111; /* Black*/
+      overflow-x: hidden; /* Disable horizontal scroll */
+      padding-top: 60px; /* Place content 60px from the top */
+      transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+
+  /* The navigation menu links */
+  .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      font-family: Gotham;
+      color: #818181;
+      display: block;
+      transition: 0.3s
+  }
+
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover, .offcanvas a:focus{
+      color: #f1f1f1;
+  }
+
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+  }
+
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+      transition: margin-left .5s;
+      padding: 20px;
+  }
+
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
   }
 
 </style>
