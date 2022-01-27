@@ -67,8 +67,14 @@
 
           <v-btn @click="get_title()"> api call </v-btn>
           <div> 
+            display value here : {{ title }} 
+          </div>
+
+          <v-spacer></v-spacer>
+          <v-btn @click="addNewVideoToLocalStorage()"> api call </v-btn>
+          <div> 
             여기에 값이 표시 됨
-           {{ title }} 
+           {{ new_title }} 
           </div>
 
           <!-- <v-select
@@ -144,6 +150,7 @@ export default {
     reportCount: [0,0,0],
     countTest: [0,0,0],
     title: "",
+    new_title: "",
   }),
   created() {
     // console.log(EventBus); 
@@ -237,6 +244,14 @@ export default {
       })
       console.log(this.title);
     },
+
+    async addNewVideoToLocalStorage() {
+      var getYoutubeTitle = require('get-youtube-title');
+      let id = 'QR1jRM4XTyc';
+      this.new_title = await getYoutubeTitle(id, async (e, t) => await t);
+      console.log("checked: " + this.new_title);
+    },
+    
 
     /* Set the width of the side navigation to 250px */
     openNav() {
