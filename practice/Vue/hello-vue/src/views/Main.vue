@@ -54,8 +54,6 @@
 </template>
 
 <script>
-// import axios from 'axios';
-// import $ from 'jquery';
 import { testAPI } from '@/api/index.js';
 // $('a.stop-video').click(function(){
 //     $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
@@ -80,7 +78,6 @@ export default {
     },
     go_Login() {
       console.log("go loginpage plz");
-      // console.log(this.$router.currentRoute.path)
       if(this.$router.currentRoute.path === "/login") {
         this.$router.go(this.$router.currentRoute);
       } else {
