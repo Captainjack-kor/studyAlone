@@ -113,9 +113,6 @@ export default {
     background-color: red;
   }
 
-  .mainBelowContents:hover {
-  }
-
   .stop {
     border: 1px black solid;
     margin: 1rem;
