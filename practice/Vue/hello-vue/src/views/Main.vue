@@ -84,6 +84,9 @@ export default {
       this.password = "";
     },
   },
+
+
+
 }
 </script>
 
@@ -92,6 +95,7 @@ export default {
 
   .on-hover {
     cursor: pointer;
+    /* test */
   }
   
   .dangdangTest.sm {
