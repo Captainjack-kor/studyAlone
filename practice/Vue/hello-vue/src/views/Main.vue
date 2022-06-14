@@ -14,6 +14,7 @@
             </v-col> -->
         </v-card>
       </v-hover>
+       
       <v-col class="main_stack_logo">
         <v-img src="@/assets/javascript.png" ></v-img>
       </v-col>
