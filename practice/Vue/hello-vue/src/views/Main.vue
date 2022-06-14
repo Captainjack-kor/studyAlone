@@ -3,15 +3,12 @@
     <div style="font-family: serif; color: white; text-align: center; font-size: 50px; margin-bottom: 50px;">
       Stack
     </div>
-    <!-- 클릭하면 진행한 프로젝트 나오게 하기? -->
+
     <v-row style="height: 100px;">
       <v-hover v-slot="{ hover }">
         <v-card
           :elevation="hover ? 0 : 12"
         >
-            <!-- <v-col class="main_stack_logo">
-              <v-img v-if="$route.path !== '/'" src="@/assets/javascript.png" ></v-img>
-            </v-col> -->
         </v-card>
       </v-hover>
        
@@ -47,17 +44,11 @@
       </div>
       <button type="submit">LOGIN</button>
     </form>
-    <!-- <button @click="exec_func()">
-      API TEST
-    </button> -->
   </div>
 </template>
 
 <script>
 import { testAPI } from '@/api/index.js';
-// $('a.stop-video').click(function(){
-//     $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-// });
 
 export default {
   data() {
@@ -72,10 +63,7 @@ export default {
   },
 
   methods: {
-    stop() {
-      // console.log("click")
-      // $("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*'); 
-    },
+    stop() {},
     go_Login() {
       console.log("go loginpage plz");
       if(this.$router.currentRoute.path === "/login") {
@@ -96,6 +84,9 @@ export default {
       this.password = "";
     },
   },
+
+
+
 }
 </script>
 
@@ -104,6 +95,7 @@ export default {
 
   .on-hover {
     cursor: pointer;
+    /* test */
   }
   
   .dangdangTest.sm {
